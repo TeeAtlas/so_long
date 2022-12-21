@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 15:41:40 by taboterm          #+#    #+#             */
-/*   Updated: 2022/06/25 18:32:00 by taboterm         ###   ########.fr       */
+/*   Updated: 2022/12/21 09:35:37 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ from the beginning and the end of the string. s1 is
 the string to be trimmed and set is the refference char 
 to trim from string -- null if allocation fails*/
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char *s1, char *set)
 {
 	size_t	i;
 	size_t	j;

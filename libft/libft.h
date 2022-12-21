@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 13:46:07 by taboterm          #+#    #+#             */
-/*   Updated: 2022/12/20 16:19:25 by taboterm         ###   ########.fr       */
+/*   Updated: 2022/12/21 09:36:06 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t	ft_strlen(const char *c);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_strjoin(char *str_a, char *str_b);
+char	*ft_strtrim(char *s1, char *set);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_itoa(int n);
 void	*ft_memchr(const void *s, int c, size_t n);
@@ -49,7 +49,7 @@ void	*ft_memset(void *b, int c, size_t len);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
-char	*ft_strchr(const char *s, int c);
+char	*ft_strchr(char *str, int c);
 char	*ft_strrchr(const char *s, int c);
 void	*ft_calloc(size_t count, size_t size);
 void	ft_putchar_fd(char c, int fd);
@@ -70,4 +70,7 @@ char	*gnl_read_line(int fd, char *str_a);
 char	*get_next_line(int fd);
 
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 5
+# endif
 #endif

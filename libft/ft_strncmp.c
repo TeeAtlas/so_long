@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taboterm <taboterm@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 14:22:40 by taboterm          #+#    #+#             */
-/*   Updated: 2022/07/09 19:50:59 by taboterm         ###   ########.fr       */
+/*   Updated: 2022/12/21 09:34:04 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,16 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	return (0);
 }
 
-int main (void) 
-{
-	char str1[] = "Hello\200";
-	char str2[] = "Hello\0";
-	int n;
-	n = 89;
+// int main (void) 
+// {
+// 	char str1[] = "Hello\200";
+// 	char str2[] = "Hello\0";
+// 	int n;
+// 	n = 89;
  
-	ft_strncmp(str1, str2, n);
-	printf("return value is:%d\n", ft_strncmp(str1, str2, n));
-	printf("original value is:%d\n", strncmp(str1, str2, n));
+// 	ft_strncmp(str1, str2, n);
+// 	printf("return value is:%d\n", ft_strncmp(str1, str2, n));
+// 	printf("original value is:%d\n", strncmp(str1, str2, n));
 
- 	return(0);
-}
+//  	return(0);
+// }
