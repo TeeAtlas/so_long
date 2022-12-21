@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 18:22:14 by taboterm          #+#    #+#             */
-/*   Updated: 2022/12/20 18:48:06 by taboterm         ###   ########.fr       */
+/*   Updated: 2022/12/21 11:46:12 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,26 @@ funciton that opens a new window on the display. receives previously obtained
 pointer w, h, and title and displays window. int mlx_loop - waits for keyboard and
 mouse input in the popped window. also redraws part of the window.*/
 
-int	window(void)
+typedef	struct	s_vars
 {
-	void	*mlx_ptr;
+	char	*map;
+	void	*mlx;
 	void	*mlx_win;
+}		t_vars;
 
-	mlx_ptr = mlx_init();
-	mlx_win = mlx_new_window(mlx_ptr, 1920, 1080, "So Long and Thanks!");
-			
-	mlx_loop(mlx_ptr);
+
+int	close_window(t_vars *vars)
+{
+	mlx_destroy_window(vars->mlx, vars->mlx_win);
+	return (0);
+}
+
+int	main(void)
+{
+	t_vars	vars;
+
+	vars.mlx = mlx_init();
+	vars.mlx_win = mlx_new_window(vars.mlx, 1920, 1080, "So Long and Thanks!");
+	mlx_hook(vars.mlx_win, 2, 1L<<0, close_window, &vars);
+	mlx_loop(vars.mlx);
 }

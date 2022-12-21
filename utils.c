@@ -6,7 +6,20 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 19:02:14 by taboterm          #+#    #+#             */
-/*   Updated: 2022/12/20 19:02:33 by taboterm         ###   ########.fr       */
+/*   Updated: 2022/12/21 11:23:50 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "./minilibx_opengl_20191021/mlx.h"
+
+void	ft_free(t_vars *vars)
+{
+	int	i;
+
+	i = 0;
+	while (i < game->map[i])
+	{
+		free(game->map[i]);
+		i++;
+	}
+}
