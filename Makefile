@@ -6,13 +6,14 @@
 #    By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/19 15:17:12 by taboterm          #+#    #+#              #
-#    Updated: 2022/12/21 11:40:28 by taboterm         ###   ########.fr        #
+#    Updated: 2023/01/06 18:24:26 by taboterm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # source id
 SRCS = window.c \
-			read_map.c utils.c\
+		
+
 
 OBJS = $(SRCS:%.c=%.o)
 
