@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 14:18:55 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/07 18:31:56 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/07 19:17:48 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,25 +36,16 @@ typedef struct s_param{
 # define KEY_A			0
 # define KEY_S			1
 # define KEY_D			2
-// int	goodbye(t_game *game)
-// {
-// 	mlx_destroy_window(game->mlx_ptr, game->win_ptr);
-// 	exit(0);
-// }
 
 int	goodbye(int keycode, t_param *param)
 {
 	if (keycode == KEY_ESC)
-	{
-		printf("keycode: %d", keycode);
-		printf("keycode equals: %d\n", param->x);
-		printf("keycode equals: %d\n", param->y);
 		exit(0);
-	}
+	printf("keycode =%d", keycode);
 	return(0);
 }
 
-void			param_init(t_param *param)
+void	param_init(t_param *param)
 {
 	param->x = 3;
 	param->y = 4;
@@ -68,7 +59,7 @@ int	main(void)
 	param_init(&param);
 	game.mlx_ptr = mlx_init();
 	game.win_ptr = mlx_new_window(game.mlx_ptr, 1920, 1080, "Hello, World");
-	mlx_hook(game.win_ptr, 3, 0, &goodbye, &param);
+	mlx_hook(game.win_ptr, KEY_ESC, 0, &goodbye, &param);
 	mlx_loop(game.mlx_ptr);
 	return (0);
 }
