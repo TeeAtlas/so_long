@@ -6,12 +6,13 @@
 #    By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/19 15:17:12 by taboterm          #+#    #+#              #
-#    Updated: 2023/01/06 18:24:26 by taboterm         ###   ########.fr        #
+#    Updated: 2023/01/07 17:28:03 by taboterm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # source id
-SRCS = window.c \
+SRCS = window_close.c \
+		
 		
 
 

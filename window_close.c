@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   window_close.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/20 14:08:43 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/07 17:23:08 by taboterm         ###   ########.fr       */
+/*   Created: 2023/01/07 14:18:55 by taboterm          #+#    #+#             */
+/*   Updated: 2023/01/07 17:30:14 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
-
 #include "./minilibx_opengl_20191021/mlx.h"
-# include "libft/libft.h"
-# include <fcntl.h>
-# include <stdlib.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
+
 
 typedef	struct	s_vars
 {
-	// char	*map;
-	void	*mlx_ptr;
+	void 	*mlx_ptr;
 	void	*win_ptr;
-	void	*img_ptr;
-	char	*addr_ptr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-}		t_vars;
+
+}				t_vars;
 
 typedef struct s_param{
 	int		x;
@@ -45,9 +36,39 @@ typedef struct s_param{
 # define KEY_A			0
 # define KEY_S			1
 # define KEY_D			2
+// int	goodbye(t_vars *vars)
+// {
+// 	mlx_destroy_window(vars->mlx_ptr, vars->win_ptr);
+// 	exit(0);
+// }
 
-int		goodbye(int keycode, t_param *param);
-void	param_init(t_param *param);
-void	put_pixel(t_vars *vars, int x, int y, int colour);
+int	goodbye(int keycode, t_param *param)
+{
+	if (keycode == KEY_ESC)
+	{
+		printf("keycode: %d", keycode);
+		printf("keycode equals: %d\n", param->x);
+		printf("keycode equals: %d\n", param->y);
+		exit(0);
+	}
+	return(0);
+}
 
-#endif
+void			param_init(t_param *param)
+{
+	param->x = 3;
+	param->y = 4;
+}
+
+int	main(void)
+{
+	t_vars	vars;
+	t_param	param;
+
+	param_init(&param);
+	vars.mlx_ptr = mlx_init();
+	vars.win_ptr = mlx_new_window(vars.mlx_ptr, 1920, 1080, "Hello, World");
+	mlx_hook(vars.win_ptr, 3, 0, &goodbye, &param);
+	mlx_loop(vars.mlx_ptr);
+	return (0);
+}
