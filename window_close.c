@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 14:18:55 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/07 17:30:14 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/07 18:31:56 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 #include <stdio.h>
 
 
-typedef	struct	s_vars
+typedef	struct	s_game
 {
 	void 	*mlx_ptr;
 	void	*win_ptr;
 
-}				t_vars;
+}				t_game;
 
 typedef struct s_param{
 	int		x;
@@ -36,9 +36,9 @@ typedef struct s_param{
 # define KEY_A			0
 # define KEY_S			1
 # define KEY_D			2
-// int	goodbye(t_vars *vars)
+// int	goodbye(t_game *game)
 // {
-// 	mlx_destroy_window(vars->mlx_ptr, vars->win_ptr);
+// 	mlx_destroy_window(game->mlx_ptr, game->win_ptr);
 // 	exit(0);
 // }
 
@@ -62,13 +62,13 @@ void			param_init(t_param *param)
 
 int	main(void)
 {
-	t_vars	vars;
+	t_game	game;
 	t_param	param;
 
 	param_init(&param);
-	vars.mlx_ptr = mlx_init();
-	vars.win_ptr = mlx_new_window(vars.mlx_ptr, 1920, 1080, "Hello, World");
-	mlx_hook(vars.win_ptr, 3, 0, &goodbye, &param);
-	mlx_loop(vars.mlx_ptr);
+	game.mlx_ptr = mlx_init();
+	game.win_ptr = mlx_new_window(game.mlx_ptr, 1920, 1080, "Hello, World");
+	mlx_hook(game.win_ptr, 3, 0, &goodbye, &param);
+	mlx_loop(game.mlx_ptr);
 	return (0);
 }

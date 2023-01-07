@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 14:08:43 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/07 17:23:08 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/07 17:44:41 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-typedef	struct	s_vars
+typedef	struct	s_game
 {
 	// char	*map;
 	void	*mlx_ptr;
@@ -30,7 +30,7 @@ typedef	struct	s_vars
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
-}		t_vars;
+}		t_game;
 
 typedef struct s_param{
 	int		x;
@@ -48,6 +48,6 @@ typedef struct s_param{
 
 int		goodbye(int keycode, t_param *param);
 void	param_init(t_param *param);
-void	put_pixel(t_vars *vars, int x, int y, int colour);
+void	put_pixel(t_game *game, int x, int y, int colour);
 
 #endif
