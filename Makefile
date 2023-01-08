@@ -6,7 +6,7 @@
 #    By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/19 15:17:12 by taboterm          #+#    #+#              #
-#    Updated: 2023/01/07 19:19:24 by taboterm         ###   ########.fr        #
+#    Updated: 2023/01/08 13:38:16 by taboterm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,7 @@ clean:
 	make clean -C ./libft
 
 fclean: clean
+	make clean -C ./minilibx_opengl_20191021
 	make fclean -C ./libft
 	/bin/rm -f *.o $(NAME)
 

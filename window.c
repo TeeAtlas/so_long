@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 18:22:14 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/07 19:22:07 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/08 13:55:21 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,8 @@
 /* void*mlx_init connects my software to display of OS, void*mlx_new_window, a 
 funciton that opens a new window on the display. receives previously obtained 
 pointer w, h, and title and displays window. int mlx_loop - waits for keyboard and
-mouse input in the popped window. also redraws part of the window.*/
-/* compile = cc -framework OpenGL -framework AppKit the_function.c 
-											minilibx_opengl_20191021/libmlx.a*/
+mouse input in the popped window. also redraws part of the window.
+cc -framework OpenGL -framework AppKit the_function.c minilibx_opengl_20191021/libmlx.a */
 
 # define X_EVENT_KEY_PRESS			2
 # define X_EVENT_KEY_RELEASE		3
@@ -49,6 +48,7 @@ typedef struct s_param
 
 int	goodbye(int keycode, t_param *param)
 {
+	(void)param;
 	if (keycode == KEY_ESC)
 		exit(0);
 	// {
@@ -83,19 +83,19 @@ int	main(void)
 	
 	game = NULL;
 	game = (t_game *) malloc (sizeof(t_game));
-	param_init(&param);
-	mlx_ptr = (void *) malloc (sizeof(void));
+	// param_init(&param);
+	// mlx_ptr = (void *) malloc (sizeof(void));
 	mlx_ptr = mlx_init();
-	win_ptr = (void *) malloc (sizeof(void));
+	// win_ptr = (void *) malloc (sizeof(void));
 	win_ptr = mlx_new_window(mlx_ptr, 1920, 1080, "So Long and Thanks!");
 	game->img_ptr = mlx_new_image(mlx_ptr, 1920, 1000);
 	game->addr_ptr = mlx_get_data_addr(game->img_ptr, &game->bits_per_pixel, &game->line_length,
 									&game->endian);
 	put_pixel(game->img_ptr, 5, 5, 0x00FF0000);
 	mlx_put_image_to_window(mlx_ptr, win_ptr, game->img_ptr, 70, 70);
-	mlx_hook(win_ptr, KEY_ESC, 0, &goodbye, &param);
+	mlx_key_hook(win_ptr, &goodbye, &param);
 	
 
-	mlx_loop(mlx_ptr);game = (t_game *) malloc (sizeof(game));
+	mlx_loop(mlx_ptr);
 	return (0);
 }
