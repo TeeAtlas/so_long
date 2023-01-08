@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   put_pixel.c                                        :+:      :+:    :+:   */
+/*   add_image.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/07 17:35:10 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/07 17:44:57 by taboterm         ###   ########.fr       */
+/*   Created: 2023/01/08 14:20:18 by taboterm          #+#    #+#             */
+/*   Updated: 2023/01/08 15:10:26 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,18 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-typedef	struct	s_game
+int	main()
 {
-	void	*img_ptr;
-	char	*addr_ptr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
+	void	*mlx_ptr;
+	void	*win_ptr;	
+	void	*img;
+	int		img_width;
+	int		img_height;
 	
-}		t_game;
-
-void	put_pixel(t_game *game, int x, int y, int colour)
-{
-	char	*dst;
-
-	dst = game->addr_ptr + (y * game->line_length + x * (game->bits_per_pixel / 8));
-	*(unsigned int*)dst = colour;
+	mlx_ptr = mlx_init();
+	win_ptr = mlx_new_window(mlx_ptr, 1920, 1080, "tile_test");
+	img = mlx_xpm_file_to_image(mlx_ptr, "./images/floor.xpm", &img_width, &img_height);
+	mlx_put_image_to_window(mlx_ptr, win_ptr, img, 0, 0);
+	mlx_loop(mlx_ptr);
+	return(0);
 }
