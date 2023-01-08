@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 14:08:43 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/08 15:32:19 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/08 16:34:17 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,9 @@ typedef	struct	s_game
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
+	void	*floor;
+	int		img_width;
+	int		img_height;
 }		t_game;
 
 typedef struct s_param{
@@ -48,5 +51,6 @@ typedef struct s_param{
 void	param_init(t_param *param);
 int		goodbye(int keycode, t_param *param);
 void	put_pixel(t_game *game, int x, int y, int colour);
+// void	add_images_floor(t_game *game);
 
 #endif

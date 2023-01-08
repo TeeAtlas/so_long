@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 15:44:23 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/08 14:26:52 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/08 16:54:43 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 /* argv stands for arguement values, variables passed to main
 when it starts to execute.*/
 
-void	read_map(char *m, t_game *game)
+void	read_map(char *map, t_game *game)
 {
 	
 }

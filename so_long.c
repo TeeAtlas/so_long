@@ -1,20 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   window.c                                           :+:      :+:    :+:   */
+/*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 18:22:14 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/08 15:32:57 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/08 16:47:39 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include "./minilibx_opengl_20191021/mlx.h"
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
+
 /* void*mlx_init connects my software to display of OS, void*mlx_new_window, a 
 funciton that opens a new window on the display. receives previously obtained 
 pointer w, h, and title and displays window. int mlx_loop - waits for keyboard and
@@ -68,6 +65,11 @@ int	main(void)
 									&game->endian);
 	put_pixel(game->img_ptr, 5, 5, 0x00FF0000);
 	mlx_put_image_to_window(mlx_ptr, win_ptr, game->img_ptr, 960, 540);
+
+
+	game->floor = mlx_xpm_file_to_image(mlx_ptr, "./images/floor.xpm", &game->img_width, &game->img_height);
+	mlx_put_image_to_window(mlx_ptr, win_ptr, game->floor, 0, 0);
+	
 	mlx_key_hook(win_ptr, &goodbye, &param);
 	
 
