@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 14:08:43 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/09 13:21:04 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/09 17:39:36 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,10 @@ typedef	struct	s_game
 {
 	// char	*map;
 	char	*addr_ptr;
-
+	char	*str_line;
+	char	*line;
+	int			hei;
+	int			wid;
 	int			bits_per_pixel;
 	int			line_length;
 	int			img_width;
@@ -50,9 +53,11 @@ typedef struct s_param
 }				t_param;
 
 
+
 void	param_init(t_param *param);
 int		goodbye(int keycode, t_param *param);
 void	put_pixel(t_game *game, int x, int y, int colour);
+void	read_map(char *map, t_game *game);
 // void	add_images_floor(t_game *game);
 
 #endif

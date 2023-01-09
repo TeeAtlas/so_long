@@ -1,31 +1,37 @@
-// /* ************************************************************************** */
-// /*                                                                            */
-// /*                                                        :::      ::::::::   */
-// /*   read_map.c                                         :+:      :+:    :+:   */
-// /*                                                    +:+ +:+         +:+     */
-// /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
-// /*                                                +#+#+#+#+#+   +#+           */
-// /*   Created: 2022/12/20 15:44:23 by taboterm          #+#    #+#             */
-// /*   Updated: 2023/01/09 15:44:26 by taboterm         ###   ########.fr       */
-// /*                                                                            */
-// /* ************************************************************************** */
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   read_map.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/20 15:44:23 by taboterm          #+#    #+#             */
+/*   Updated: 2023/01/09 17:37:21 by taboterm         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// #include "./minilibx_opengl_20191021/mlx.h"
-// /* argv stands for arguement values, variables passed to main
-// when it starts to execute.*/
+#include "so_long.h"
 
-// void	read_map(char *map, t_game *game)
-// {
-// 	int		fd;
-// 	char	*line;
+void	read_map(char *map, t_game *game)
+{
+	int		fd;
+	char	*line;
 
-// 	fd = open(map, O_RDONLY);
-// 	line = get_next_line(fd);
-// 	game->img_height = 0;
-// 	game->img_width = ft_strlen(game.line) - 1;
-// 	game->str_line = ft
-	
-
-	
-	
-// }
+	fd = open(map, O_RDONLY);
+	line = get_next_line(fd);
+	game->hei = 0;
+	game->wid = ft_strlen(game->line) - 1;
+	game->str_line = ft_strdup(line);
+	free(line);
+	while (line)
+	{
+		game->hei++;
+		line = get_next_line(fd);
+		if (line)
+		{
+			game->str_line = ft_strjoin(game->str_line, line);
+		}
+	}
+	close(fd);
+	printf("%s\n", game->str_line);	
+}
