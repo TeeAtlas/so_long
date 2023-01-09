@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 18:22:14 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/08 17:05:53 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/09 13:20:58 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,7 @@ int	main(void)
 	game->img_ptr = mlx_new_image(mlx_ptr, 1920, 1080);
 	game->addr_ptr = mlx_get_data_addr(game->img_ptr, &game->bits_per_pixel, &game->line_length,
 									&game->endian);
-	put_pixel(game->img_ptr, 5, 5, 0x00FF0000);
-	mlx_put_image_to_window(mlx_ptr, win_ptr, game->img_ptr, 960, 540);
-
-
-	game->floor = mlx_xpm_file_to_image(mlx_ptr, "./images/floor_1920x1080.xpm", &game->img_width, &game->img_height);
+	game->floor = mlx_xpm_file_to_image(mlx_ptr, "./images/floor_100x100.xpm", &game->img_width, &game->img_height);
 	mlx_put_image_to_window(mlx_ptr, win_ptr, game->floor, 0, 0);
 	
 	mlx_key_hook(win_ptr, &goodbye, &param);

@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 14:08:43 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/08 17:16:16 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/09 13:21:04 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,7 @@ typedef	struct	s_game
 {
 	// char	*map;
 	char	*addr_ptr;
-	char	*str_line
-	char	*line
+
 	int			bits_per_pixel;
 	int			line_length;
 	int			img_width;
