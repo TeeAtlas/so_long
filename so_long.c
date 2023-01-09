@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 18:22:14 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/09 13:20:58 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/09 16:52:32 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,6 @@ int	main(void)
 	mlx_put_image_to_window(mlx_ptr, win_ptr, game->floor, 0, 0);
 	
 	mlx_key_hook(win_ptr, &goodbye, &param);
-	
-
 	mlx_loop(mlx_ptr);
 	return (0);
 }
