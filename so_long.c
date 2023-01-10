@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 18:22:14 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/09 16:52:32 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/10 13:30:23 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,6 @@ void	param_init(t_param *param)
 	param->x = 3;
 	param->y = 4;
 }
-
-void	put_pixel(t_game *game, int x, int y, int colour)
-{
-	char	*dst;
-
-	dst = game->addr_ptr + (y * game->line_length + x * (game->bits_per_pixel / 8));
-	*(unsigned int*)dst = colour;
-}
-
 
 int	main(void)
 {
