@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 14:08:43 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/10 17:14:46 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/10 20:29:15 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef	struct	s_game
 	char	*str_line;
 	char	*line;
 	char	**array; 
+	int			fd;
 	int			col;
 	int			row;
 	int			bits_per_pixel;

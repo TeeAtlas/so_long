@@ -6,32 +6,26 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 15:44:23 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/10 18:37:50 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/10 21:08:37 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	read_map(char *map, t_game *game)
+void	read_map(t_game *game)
 {
-	int		fd;
-	char	*line;
-
-	fd = open(map, O_RDONLY);
-	line = get_next_line(fd);
-	game->hei = 0;
-	game->wid = ft_strlen(game->line) - 1;
-	game->str_line = ft_strdup(line);
-	free(line);
-	while (line)
+	game->fd = open(game->map_wlonly, O_RDONLY);
+	game->line = get_next_line(game->fd);
+	while (game->line)
 	{
-		game->hei++;
-		line = get_next_line(fd);
-		if (line)
-		{
-			game->str_line = ft_strjoin(game->str_line, line);
-		}
+		if (!game->line)
+			return (0);
+		if (game->line)
+			game->str_line = ft_strjoin(game->str_line, game->line);
 	}
-	close(fd);
-	printf("%s\n", game->str_line);	
+	return (game->str_line);
+	game->array = ft_split(game->str_line, '\n');
+	printf("%s\n", game->array);
+	return (game->array);
+	close(game->fd);
 }
