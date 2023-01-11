@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 14:08:43 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/10 20:29:15 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/11 01:35:22 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,23 +31,25 @@
 
 typedef	struct	s_game
 {
-	char	*map;  // 2d map
-	char	*map_wlonly;
+	char	*map_file;  // 2d map
+	int		fd;
+	void	*mlx_ptr;
+	void	*win_ptr;
+//	char	*map_wlonly;
 	char	*addr_ptr;
 	char	*str_line;
 	char	*line;
-	char	**array; 
-	int			fd;
-	int			col;
-	int			row;
-	int			bits_per_pixel;
-	int			line_length;
-	int			img_width;
-	int			img_height;
-	int			endian;
+	char	**array;
+	int		col;
+	int		row;
+//	int		bits_per_pixel;
+//	int		line_length;
+	int		img_width;
+	int		img_height;
+//	int		endian;
 	void	*floor;
 	void	*img_ptr;
-}		t_game;
+}			t_game;
 
 typedef struct s_param
 {
@@ -62,5 +64,14 @@ int		goodbye(int keycode, t_param *param);
 void	put_pixel(t_game *game, int x, int y, int colour);
 void	read_map(t_game *game);
 // void	add_images_floor(t_game *game);
+
+//Function checks whether an input file is valid.
+int	filecheck(t_game *game);
+//Function checks that map file dimensions are valid.
+int	valid_dimensions(char *mapfile);
+//Function checks for a ".ber" ending in the string.
+int	ends_ber(char *str);
+//Function frees a pointer returning a given value.
+int	free_num(void *ptr, int num);
 
 #endif
