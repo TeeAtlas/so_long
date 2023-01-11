@@ -6,11 +6,19 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 23:35:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/11 01:34:24 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/11 02:07:04 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+//Function checks whether character is valid map character.
+int	is_valid_map(char ch)
+{
+	if (ch == '1' || ch == '0' || ch == 'C' || ch == 'E' || ch == 'P')
+		return (1);
+	return (0);
+}
 
 //Function checks for a ".ber" ending in the string.
 int	ends_ber(char *str)
@@ -29,14 +37,6 @@ int	ends_ber(char *str)
 		i++;
 	}
 	if (ft_strncmp(ending, "ber", 4) == 0)
-		return (1);
-	return (0);
-}
-
-//Function checks whether character is valid map character.
-int	is_valid_map(char ch)
-{
-	if (ch == '1' || ch == '0' || ch == 'C' || ch == 'E' || ch == 'P')
 		return (1);
 	return (0);
 }
@@ -87,23 +87,24 @@ int	valid_dimensions(char *mapfile)
 		if (currlen != length)
 			return (free_num(current, 0));
 	}
+	close(fd);
 	return (1);
 }
 
 //Function checks whether an input file is valid.
 int	filecheck(t_game *game)
 {
-	if (ends_ber(game->map_file) == 0)
+	if (ends_ber(game->map.map_file) == 0)
 	{
 		ft_putstr_fd("Error: Filename\n", 2);
 		return (0);
 	}
-	if (valid_dimensions(game->map_file) == 0)
+	if (valid_dimensions(game->map.map_file) == 0)
 	{
 		ft_putstr_fd("Error: Invalid map dimensions\n", 2);
 		return (0);
 	}
-	else if (valid_dimensions(game->map_file) == 10)
+	else if (valid_dimensions(game->map.map_file) == 10)
 	{
 		ft_putstr_fd("Error: Invalid map character\n", 2);
 		return (0);
