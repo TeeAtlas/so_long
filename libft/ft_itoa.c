@@ -3,20 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taboterm <taboterm@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 16:51:41 by taboterm          #+#    #+#             */
-/*   Updated: 2022/07/11 21:16:25 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/12 11:44:20 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 /*Allocates (with malloc(3)) and returns a string
 representing the integer received as an argument.
 Negative numbers must be handled.
 Null if allocation fails
 Param #1 n integer to be converted 
-uning long int to */
+using long int to */
 
 int	ft_length(long int nb)
 {

@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 13:46:07 by taboterm          #+#    #+#             */
-/*   Updated: 2022/12/21 09:36:06 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/12 11:57:10 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <stdlib.h>
 // # include <string.h>
 # include <unistd.h>
+// type va_list and three macros which can be used to get the arguments
+# include <stdarg.h>
 // # include <stdint.h>
 
 typedef struct s_list
@@ -68,6 +70,16 @@ char	*gnl_output(char *str_a);
 char	*gnl_new_line(char *str_a);
 char	*gnl_read_line(int fd, char *str_a);
 char	*get_next_line(int fd);
+
+/* printf */
+int			ft_printf(const char *fmt, ...);
+int			ft_printchar(int c);
+int			ft_len(long int n);
+int			ft_uitoa(unsigned long int n);
+int			ft_putnum_mod(long n, char *base, int base_len);
+int			ft_printptr(unsigned long long ptr);
+int			ft_pt_len(unsigned long int addi);
+int			ft_printstr(char *str);
 
 
 # ifndef BUFFER_SIZE
