@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 14:08:43 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/11 02:34:11 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/19 16:37:18 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,20 +66,6 @@ typedef	struct	s_game
 {
 	t_mlx	mlx;
 	t_map	map;
-//	int		fd;
-//	char	*map_wlonly;
-//	char	*addr_ptr;
-//	char	*str_line;
-//	char	*line;
-// char	**array;
-// int		col;
-// int		row;
-//	int		bits_per_pixel;
-//	int		line_length;
-//	int		img_width;
-//	int		img_height;
-//	int		endian;
-//	void	*floor;
 }			t_game;
 
 typedef struct s_param
