@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   map_checker.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 23:35:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/11 02:07:04 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/22 21:22:23 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,17 +96,17 @@ int	filecheck(t_game *game)
 {
 	if (ends_ber(game->map.map_file) == 0)
 	{
-		ft_putstr_fd("Error: Filename\n", 2);
+		ft_printf("Error: Filename\n");
 		return (0);
 	}
 	if (valid_dimensions(game->map.map_file) == 0)
 	{
-		ft_putstr_fd("Error: Invalid map dimensions\n", 2);
+		ft_printf("Error: Invalid map dimensions\n");
 		return (0);
 	}
 	else if (valid_dimensions(game->map.map_file) == 10)
 	{
-		ft_putstr_fd("Error: Invalid map character\n", 2);
+		ft_printf("Error: Invalid map character\n");
 		return (0);
 	}
 	return (1);

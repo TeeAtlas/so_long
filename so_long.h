@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/20 14:08:43 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/19 16:37:18 by taboterm         ###   ########.fr       */
+/*   Created: 2023/01/20 15:39:27 by taboterm          #+#    #+#             */
+/*   Updated: 2023/01/22 22:10:20 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
+#ifndef	SO_LONG_H
 # define SO_LONG_H
 
 #include "./minilibx_opengl_20191021/mlx.h"
@@ -18,77 +18,89 @@
 # include <fcntl.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h> 
-
-# define X_EVENT_KEY_PRESS			2
-# define X_EVENT_KEY_RELEASE		3
-
-# define KEY_ESC		53
-# define KEY_W			13
-# define KEY_A			0
-# define KEY_S			1
-# define KEY_D			2
-
-typedef struct s_img
-{
-	void			*img_ptr;
-	struct s_img	*next;
-}					t_img;
-
-typedef struct s_img_lst
-{
-	t_img	*first;
-}			t_img_lst;
-
-typedef struct s_mlx
-{
-	void		*mlx_ptr;
-	void		*win_ptr;
-	t_img_lst	*img_list;
-}				t_mlx;
-
-typedef struct s_map
-{
-	char	*map_file;
-	int		map_width;
-	int		map_height;
-	char	**map_arr;
-}			t_map;
-
-typedef struct s_tile
-{
-	char	*tile_file;
-	int		tile_width;
-	int		tile_height;
-}			t_tile;
-
-typedef	struct	s_game
-{
-	t_mlx	mlx;
-	t_map	map;
-}			t_game;
+# include <stdio.h>
+# include "images_events.h"
 
 typedef struct s_param
 {
-	int		x;
-	int		y;
-}				t_param;
+    int     x;
+    int     y;
+}                t_param;
+
+typedef struct s_img
+{
+    void    *mlx;
+    char    *addr;
+    char    *name;
+    int     w;
+    int     h;
+    int     bpp;
+    int     line_len;
+}    t_img;
+
+
+typedef struct s_tile
+{
+    char    type;
+    int     w;
+    int     h;;
+    void    *fl;
+    t_param pos;
+    // coordiates for placing tiles
+}    t_tile;
+
+typedef struct s_panel
+{
+    int         w;
+    int         h;
+    t_param     pos;
+}    t_panel;
+
+
+typedef struct s_map
+{
+    char    *map_file;
+    int     w;
+    int     h;
+    int     grid_x;
+    int     grid_y;
+    char    **map_copy;
+    t_tile  **tile;
+}    t_map;
+
+typedef struct s_game
+{
+    void    *mlx;
+    void    *win;
+    int     w;
+    int     h;
+    int     bsize;
+    t_map   map;
+    t_panel panel;
+    t_tile  tile;
+}    t_game;
 
 
 
-void	param_init(t_param *param);
-int		goodbye(int keycode, t_param *param);
-void	put_pixel(t_game *game, int x, int y, int colour);
-void	read_map(t_game *game);
-// void	add_images_floor(t_game *game);
 
+void    param_init(t_param *param);
+int     close_window(int keycode, t_param *param);
+void    read_map(t_game *game);
+// void    add_images_floor(t_game *game);
+void	load_images(t_game *game);
+void	img_to_win(t_game *game, void *img);
+void	image_fail(t_game *game);
+//function to initialize game
+void    initialize_game(t_game *game);
 //Function checks whether an input file is valid.
-int	filecheck(t_game *game);
+int     filecheck(t_game *game);
+void    image_fail(t_game *game);
 //Function checks that map file dimensions are valid.
-int	valid_dimensions(char *mapfile);
+int     valid_dimensions(char *mapfile);
 //Function checks for a ".ber" ending in the string.
-int	ends_ber(char *str);
+int     ends_ber(char *str);
 //Function frees a pointer returning a given value.
-int	free_num(void *ptr, int num);
+int     free_num(void *ptr, int num);
+void    image_fail(t_game *game);
 
-#endif
+#endif 

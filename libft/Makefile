@@ -7,7 +7,7 @@ SRC = ft_isalpha.c ft_isalnum.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_strlen
 	ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_striteri.c ft_itoa.c ft_strmapi.c\
 	ft_strdup.c ft_strrchr.c ft_strncmp.c ft_split.c ft_strtrim.c \
 	get_next_line.c \
-	ft_uitoa.c ft_printchar.c ft_printf.c ft_printptr.c ft_printstr.c ft_printnum_mod.c \
+	ft_uitoa.c ft_printchar.c ft_printf.c ft_printptr.c ft_printstr.c ft_putnum_mod.c \
 	
 
 
