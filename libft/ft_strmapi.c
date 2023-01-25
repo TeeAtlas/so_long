@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:01:52 by taboterm          #+#    #+#             */
-/*   Updated: 2022/06/25 18:24:33 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/24 22:37:23 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 int main()
 {
- 		char str[10] = "kooky"; // how do I keep the period?
+ 	char str[10] = "kooky"; // how do I keep the period?
   	char *result = ft_strmapi(str, my_func);
   	printf("The result is %s\n", result);
  	return 0;
