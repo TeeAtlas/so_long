@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 18:22:14 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/22 20:35:59 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/25 21:59:42 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,10 @@ int	close_window(int keycode, t_param *param)
 	(void)param;
 	if (keycode == KEY_ESC)
 		exit(0);
-	ft_printf("Goodbye");
 	// {
 	// 	printf("keycode: %d\n", keycode);
 	// }
-	return(0);
+	return(EXIT_SUCCESS);
 }
 
 int	main(int argc, char **argv)
@@ -63,13 +62,10 @@ int	main(int argc, char **argv)
 	if (filecheck(game) == 0)
 		return (EXIT_FAILURE);
 	initialize_game(game);
-	load_images(game);
-    //load images
     //path finder
 	//find player
-	// mlx_put_image_to_window(game->mlx, game->mlx, floor, 100, 100);
-	// mlx_put_image_to_window(game->mlx, game->mlx, floor, 0, 0);
-    //load whole game
+	// add_tiles(game);
+    // draw_map(game);
 	mlx_key_hook(game->mlx, &close_window, &param);
 	mlx_loop(game->mlx);
     return (EXIT_SUCCESS);
