@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:39:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/22 22:10:20 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/25 21:47:10 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,10 @@ typedef struct s_panel
 typedef struct s_map
 {
     char    *map_file;
+    int     rows;
     int     w;
     int     h;
-    int     grid_x;
-    int     grid_y;
+    char    **array;
     char    **map_copy;
     t_tile  **tile;
 }    t_map;
@@ -72,6 +72,7 @@ typedef struct s_game
 {
     void    *mlx;
     void    *win;
+    int     fd;
     int     w;
     int     h;
     int     bsize;
@@ -86,21 +87,32 @@ typedef struct s_game
 void    param_init(t_param *param);
 int     close_window(int keycode, t_param *param);
 void    read_map(t_game *game);
-// void    add_images_floor(t_game *game);
-void	load_images(t_game *game);
-void	img_to_win(t_game *game, void *img);
-void	image_fail(t_game *game);
+int	    draw_map(t_game *game);
+
+// adding images
+void	img_to_map(t_game *game, void *img, int i, int j);
+void	add_tiles(t_game *game);
+void	load_fl(t_game *game);
+
 //function to initialize game
 void    initialize_game(t_game *game);
+
 //Function checks whether an input file is valid.
 int     filecheck(t_game *game);
 void    image_fail(t_game *game);
+
 //Function checks that map file dimensions are valid.
 int     valid_dimensions(char *mapfile);
+
+//strlen for maps
+int     maplinelen(char *mapline);
+
 //Function checks for a ".ber" ending in the string.
 int     ends_ber(char *str);
+
 //Function frees a pointer returning a given value.
 int     free_num(void *ptr, int num);
 void    image_fail(t_game *game);
+void	malloc_maps(t_game *game);
 
 #endif 
