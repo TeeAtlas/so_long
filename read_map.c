@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 15:44:23 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/25 21:42:03 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/26 21:20:45 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,16 @@ void	malloc_maps(t_game *game)
 }
 
 //counts columns and rows ie: height(row) and width(col)
-void	read_map(t_game *game)
+void	reading_map(t_game *game, char *mapfile)
 {
 	char	*line;
 	
 	game->map.rows = 0;
-	game->fd = open(game->map.map_file, O_RDONLY);
+	game->fd = open(mapfile, O_RDONLY);
 	line = get_next_line(game->fd);
 	if (!line)
 	{
-		ft_printf("No file to read");
+		ft_printf("Error: No file to read");
 		exit (EXIT_SUCCESS);
 	}
 	free (line);
@@ -48,24 +48,30 @@ void	read_map(t_game *game)
 	malloc_maps(game);
 }
 
-int	draw_map(t_game *game)
+
+
+int	display_map(t_game *game)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
+	char	*tile_path;
 
 	i = 0;
 	j = 0;
 	while (game->map.array[i])
 	{
-		while (game->map.array[i][j])
+		while (game->map.array[j][i])
 		{
-			if (game->map.array[i][j] == '1')
-				img_to_map(game, game->tile.fl, i, j);
+			tile_path = display_tile(game, j, i);
+			game->tile.img = mlx_xpm_file_to_image(game->mlx, tile_path, \
+			&game->tile.tile_dimension, &game->tile.tile_dimension);
+			mlx_put_image_to_window(game->mlx, game->win, game->tile.img, \
+			game->w, game->h);
+			game->w = game->w + game->tile.tile_dimension;
 			j++;
 		}
 		j = 0;
 		i++;
 	}
-	return(0);
+	return(EXIT_SUCCESS);
 }
-
