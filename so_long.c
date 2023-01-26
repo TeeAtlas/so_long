@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 18:22:14 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/25 21:59:42 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/26 21:31:27 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,9 @@ void	param_init(t_param *param)
 void	initialize_game(t_game *game)
 {
 	game->mlx = mlx_init();
-	game->bsize = TILE_SIZE;
+	game->tile.tile_dimension = 100;
 	game->mlx = mlx_new_window \
-	(game->mlx, 1000, 500, "Shadow of Dr. Manhattan");
-	//will have to create function for counting columns and rows ex:
-	//game->window = mlx_new_window(game->mlx, game->map_columns_count * \
-	//game->tile_dimension, game->map_rows_count \
-	//* game->tile_dimension, "so_long");
+	(game->mlx, game->map.w, game->map.h, "Shadow of Dr. Manhattan");
 }
 
 int	close_window(int keycode, t_param *param)
@@ -61,11 +57,13 @@ int	main(int argc, char **argv)
 	game->map.map_file = argv[1];
 	if (filecheck(game) == 0)
 		return (EXIT_FAILURE);
+	reading_map(game, argv[1]);
 	initialize_game(game);
+	//
+    // draw_map(game);
     //path finder
 	//find player
 	// add_tiles(game);
-    // draw_map(game);
 	mlx_key_hook(game->mlx, &close_window, &param);
 	mlx_loop(game->mlx);
     return (EXIT_SUCCESS);
