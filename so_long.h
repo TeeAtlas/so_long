@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:39:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/25 21:47:10 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/26 21:21:11 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,34 +27,34 @@ typedef struct s_param
     int     y;
 }                t_param;
 
-typedef struct s_img
-{
-    void    *mlx;
-    char    *addr;
-    char    *name;
-    int     w;
-    int     h;
-    int     bpp;
-    int     line_len;
-}    t_img;
+// typedef struct s_img
+// {
+//     void    *mlx;
+//     char    *addr;
+//     char    *name;
+//     int     w;
+//     int     h;
+//     int     bpp;
+//     int     line_len;
+// }    t_img;
 
 
 typedef struct s_tile
 {
-    char    type;
     int     w;
     int     h;;
-    void    *fl;
+	int		tile_dimension;
+    void    *img;
     t_param pos;
     // coordiates for placing tiles
 }    t_tile;
 
-typedef struct s_panel
-{
-    int         w;
-    int         h;
-    t_param     pos;
-}    t_panel;
+// typedef struct s_panel
+// {
+//     int         w;
+//     int         h;
+//     t_param     pos;
+// }    t_panel;
 
 
 typedef struct s_map
@@ -77,7 +77,6 @@ typedef struct s_game
     int     h;
     int     bsize;
     t_map   map;
-    t_panel panel;
     t_tile  tile;
 }    t_game;
 
@@ -86,13 +85,12 @@ typedef struct s_game
 
 void    param_init(t_param *param);
 int     close_window(int keycode, t_param *param);
-void    read_map(t_game *game);
+void    reading_map(t_game *game, char *mapfile);
 int	    draw_map(t_game *game);
+int		display_map(t_game *game);
 
 // adding images
-void	img_to_map(t_game *game, void *img, int i, int j);
-void	add_tiles(t_game *game);
-void	load_fl(t_game *game);
+char	*display_tile(t_game *game, int j, int i);
 
 //function to initialize game
 void    initialize_game(t_game *game);
@@ -113,6 +111,8 @@ int     ends_ber(char *str);
 //Function frees a pointer returning a given value.
 int     free_num(void *ptr, int num);
 void    image_fail(t_game *game);
+
+//function  mallocs memory for map and map copy
 void	malloc_maps(t_game *game);
 
 #endif 
