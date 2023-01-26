@@ -6,13 +6,13 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 16:21:31 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/20 17:50:28 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/26 21:07:10 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-#define TILE_SIZE    100
+# define TILE_SIZE    100
 
 
 # define FLOOR_TILE			"images/floor_100x100.xpm"
