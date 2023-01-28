@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 15:44:23 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/28 20:44:52 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/28 21:12:16 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,16 +48,18 @@ void	reading_map(t_game *game, char *mapfile)
 
 int	display_map(t_game *game)
 {
+	
 	int		i;
 	int		j;
 	char	*tile_path;
 
 	i = 0;
 	j = 0;
-	while (game->map.array[i])
+	while (game->map.map_file[i])
 	{
-		while (game->map.array[i][j])
+		while (game->map.map_file[i][j])
 		{
+			printf("hello");
 			tile_path = display_tile(game);
 			game->tile.img = mlx_xpm_file_to_image(game->mlx, tile_path, \
 			&game->tile.tile_dimension, &game->tile.tile_dimension);
@@ -66,6 +68,7 @@ int	display_map(t_game *game)
 			game->w = game->w + game->tile.tile_dimension;
 			j++;
 		}
+		printf("hello\n");
 		j = 0;
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 18:14:26 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/28 19:27:16 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/28 21:05:03 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*display_tile(t_game *game)
 	i = 0;
 	j = 0;
 	tile_path = 0;
-	if (game->map.array[j][i] == '1')
+	if (game->map.array[i][j] == '1')
 		tile_path = "images/floor_100x100.xpm";
 	ft_printf(tile_path);
 // 	else if (game->map.map_file[j][i] == '0')
