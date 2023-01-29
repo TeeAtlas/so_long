@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 15:44:23 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/28 21:12:16 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/29 08:42:21 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,32 +46,32 @@ void	reading_map(t_game *game, char *mapfile)
 
 
 
-int	display_map(t_game *game)
+int	display_map(t_game *game, char *mapfile)
 {
-	
 	int		i;
 	int		j;
 	char	*tile_path;
-
-	i = 0;
+	
+	
+	printf("map");
 	j = 0;
-	while (game->map.map_file[i])
+	game->map.w = 0;
+	while (game->map.rows)
 	{
-		while (game->map.map_file[i][j])
+		i = 0;
+		game->map.h = 0;
+		while (mapfile[i][j] != '\n' &&  mapfile[i][j] != '\0')
 		{
-			printf("hello");
 			tile_path = display_tile(game);
 			game->tile.img = mlx_xpm_file_to_image(game->mlx, tile_path, \
 			&game->tile.tile_dimension, &game->tile.tile_dimension);
 			mlx_put_image_to_window(game->mlx, game->win, game->tile.img, \
-			game->w, game->h);
-			game->w = game->w + game->tile.tile_dimension;
+			game->map.w, game->map.h);
+			game->map.w += game->tile.tile_dimension;
 			j++;
 		}
-		printf("hello\n");
-		j = 0;
+		i = 0;
 		i++;
+		game->map.h += game->tile.tile_dimension;
 	}
-
-	return(EXIT_SUCCESS);
 }

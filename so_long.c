@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 18:22:14 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/28 20:56:34 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/29 08:28:08 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	main(int argc, char **argv)
 		return (EXIT_FAILURE);
 	reading_map(game, argv[1]);
 	initialize_game(game);
-	display_map(game);
+	display_map(game, argv[1]);
     //path finder
 	//find player
 	// add_tiles(game);
