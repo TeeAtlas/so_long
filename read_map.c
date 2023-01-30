@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 15:44:23 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/29 08:42:21 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/30 15:47:19 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ void	malloc_maps(t_game *game)
 }
 
 //counts columns and rows ie: height(row) and width(col)
-void	reading_map(t_game *game, char *mapfile)
+void	reading_map(t_game *game)
 {
 	char	*line;
 	
 	game->map.rows = 0;
-	game->fd = open(mapfile, O_RDONLY);
+	game->fd = open(game->map.map_file, O_RDONLY);
 	line =  get_next_line(game->fd);
 	if (!line)
 	{
@@ -44,34 +44,48 @@ void	reading_map(t_game *game, char *mapfile)
 	malloc_maps(game);
 }
 
-
-
-int	display_map(t_game *game, char *mapfile)
+void	read_map_array(t_game *game)
 {
-	int		i;
-	int		j;
-	char	*tile_path;
+	char	*str_a;
 	
-	
-	printf("map");
-	j = 0;
-	game->map.w = 0;
-	while (game->map.rows)
+	game->fd = open(game->map.map_file, O_RDONLY);
+	game->map.str = malloc (sizeof(char));
+	while (game->map.str)
 	{
-		i = 0;
-		game->map.h = 0;
-		while (mapfile[i][j] != '\n' &&  mapfile[i][j] != '\0')
-		{
-			tile_path = display_tile(game);
-			game->tile.img = mlx_xpm_file_to_image(game->mlx, tile_path, \
-			&game->tile.tile_dimension, &game->tile.tile_dimension);
-			mlx_put_image_to_window(game->mlx, game->win, game->tile.img, \
-			game->map.w, game->map.h);
-			game->map.w += game->tile.tile_dimension;
-			j++;
-		}
-		i = 0;
-		i++;
-		game->map.h += game->tile.tile_dimension;
+		game->map.str = get_next_line(game->fd);
+		if(game->map.str)
+			str_a = ft_strjoin(str_a, game->map.str);
 	}
+	printf("map str: \n%s\n", str_a);
 }
+
+// int	display_map(t_game *game, char *mapfile)
+// {
+// 	int		i;
+// 	int		j;
+// 	char	*tile_path;
+	
+	
+// 	printf("map");
+// 	j = 0;
+// 	game->map.w = 0;
+// 	while (game->map.rows)
+// 	{
+// 		printf("what is here: %d", game->map.rows);
+// 		i = 0;
+// 		game->map.h = 0;
+// 		while (mapfile[i][j] != '\n' &&  mapfile[i][j] != '\0')
+// 		{
+// 			tile_path = display_tile(game);
+// 			game->tile.img = mlx_xpm_file_to_image(game->mlx, tile_path, \
+// 			&game->tile.tile_dimension, &game->tile.tile_dimension);
+// 			mlx_put_image_to_window(game->mlx, game->win, game->tile.img, \
+// 			game->map.w, game->map.h);
+// 			game->map.w += game->tile.tile_dimension;
+// 			j++;
+// 		}
+// 		i = 0;
+// 		i++;
+// 		game->map.h += game->tile.tile_dimension;
+// 	}
+// }
