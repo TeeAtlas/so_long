@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:39:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/28 20:34:11 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/30 21:30:45 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ typedef struct s_map
     int     rows;
     int     w;
     int     h;
+    char    *str;
+    char    *str_2;
     char    **array;
     char    **map_copy;
     t_tile  **tile;
@@ -85,8 +87,9 @@ typedef struct s_game
 
 void    param_init(t_param *param);
 int     close_window(int keycode, t_param *param);
-void    reading_map(t_game *game, char *mapfile);
-int		display_map(t_game *game);
+void    reading_map(t_game *game);
+void	read_map_array(t_game *game);
+int	    display_map(t_game *game, char *mapfile);
 
 // adding images
 char	*display_tile(t_game *game);
