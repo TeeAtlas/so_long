@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 15:44:23 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/30 15:47:19 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/01/30 17:31:15 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	malloc_maps(t_game *game)
 }
 
 //counts columns and rows ie: height(row) and width(col)
-void	reading_map(t_game *game)
+void	cols_rows(t_game *game)
 {
 	char	*line;
 	
@@ -46,17 +46,15 @@ void	reading_map(t_game *game)
 
 void	read_map_array(t_game *game)
 {
-	char	*str_a;
-	
 	game->fd = open(game->map.map_file, O_RDONLY);
 	game->map.str = malloc (sizeof(char));
 	while (game->map.str)
 	{
 		game->map.str = get_next_line(game->fd);
 		if(game->map.str)
-			str_a = ft_strjoin(str_a, game->map.str);
+			game->map.str_2 = ft_strjoin(game->map.str_2, game->map.str);
 	}
-	printf("map str: \n%s\n", str_a);
+	printf("map str: \n%s\n", game->map.str_2);
 }
 
 // int	display_map(t_game *game, char *mapfile)
