@@ -6,33 +6,14 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 18:14:26 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/28 21:05:03 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/01 14:39:36 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"so_long.h"
 
-char	*display_tile(t_game *game)
+void	read_fl_tile(t_game *game)
 {
-	char	*tile_path;
-	int		i;
-	int		j;
-	
-	i = 0;
-	j = 0;
-	tile_path = 0;
-	if (game->map.array[i][j] == '1')
-		tile_path = "images/floor_100x100.xpm";
-	ft_printf(tile_path);
-// 	else if (game->map.map_file[j][i] == '0')
-// 		tile_path = "images/floor_100x100.xpm"; // add new path - try macro
-// 	else if (game->map.map_file[j][i])
-// 		tile_path = "images/floor_100x100.xpm"; // add new path
-// 	else if (game->map.map_file[j][i] == 'C')
-// 		tile_path = "images/floor_100x100.xpm"; // add new path
-// 	else if (game->map.map_file[j][i]== 'E')
-// 		tile_path = "images/floor_100x100.xpm"; // add new path
-// 	else if (game->map.map_file[j][i] == 'P')
-// 		tile_path = "images/floor_100x100.xpm"; // add new path
-	return (tile_path);
+	game->tile.fl = mlx_xpm_file_to_image(game->mlx,\
+	 "images/floor_100x100.xpm", game->tile.w, game->tile.h);
 }

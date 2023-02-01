@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:39:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/30 21:30:45 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/01 14:39:30 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ typedef struct s_tile
     int     w;
     int     h;;
 	int		tile_dimension;
+    void    *fl;
     void    *img;
-    t_param pos;
     // coordiates for placing tiles
 }    t_tile;
 
@@ -65,7 +65,7 @@ typedef struct s_map
     int     h;
     char    *str;
     char    *str_2;
-    char    **array;
+    char    *array;
     char    **map_copy;
     t_tile  **tile;
 }    t_map;
@@ -87,12 +87,12 @@ typedef struct s_game
 
 void    param_init(t_param *param);
 int     close_window(int keycode, t_param *param);
-void    reading_map(t_game *game);
+void    count_col_row(t_game *game);
 void	read_map_array(t_game *game);
-int	    display_map(t_game *game, char *mapfile);
+
 
 // adding images
-char	*display_tile(t_game *game);
+void	read_fl_tile(t_game *game);
 
 //function to initialize game
 void    initialize_game(t_game *game);

@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 18:22:14 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/30 21:32:45 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/01 14:27:46 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	param_init(t_param *param)
 	param->y = 4;
 }
 
+//initializing game and establishing window size
 void	initialize_game(t_game *game)
 {
 	game->mlx = mlx_init();
@@ -39,9 +40,6 @@ int	close_window(int keycode, t_param *param)
 	(void)param;
 	if (keycode == KEY_ESC)
 		exit(0);
-	// {
-	// 	printf("keycode: %d\n", keycode);
-	// }
 	return(EXIT_SUCCESS);
 }
 
@@ -56,7 +54,7 @@ int	main(int argc, char **argv)
 	game->map.map_file = argv[1];
 	if (filecheck(game) == 0)
 		return (EXIT_FAILURE);
-	reading_map(game);
+	count_col_row(game);
 	read_map_array(game);
 	initialize_game(game);
 	mlx_key_hook(game->mlx, &close_window, &param);

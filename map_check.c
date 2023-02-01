@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 23:35:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/26 18:11:28 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/01 13:52:46 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ int	maplinelen(char *mapline)
 }
 
 //Function checks that map file dimensions are valid.
+// all lines are the same length
 int	valid_dimensions(char *mapfile)
 {
 	int		fd;

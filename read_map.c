@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 15:44:23 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/30 21:29:54 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/01 14:41:10 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,10 @@ void	read_map_array(t_game *game)
 	printf("map str: \n%s\n", game->map.str_2);
 }
 
+//do I need to strjoin the array?
+
 //counts columns and rows ie: height(row) and width(col)
-void	reading_map(t_game *game)
+void	count_col_row(t_game *game)
 {
 	char	*line;
 	
@@ -60,33 +62,3 @@ void	reading_map(t_game *game)
 
 
 
-// int	display_map(t_game *game, char *mapfile)
-// {
-// 	int		i;
-// 	int		j;
-// 	char	*tile_path;
-	
-	
-// 	printf("map");
-// 	j = 0;
-// 	game->map.w = 0;
-// 	while (game->map.rows)
-// 	{
-// 		printf("what is here: %d", game->map.rows);
-// 		i = 0;
-// 		game->map.h = 0;
-// 		while (mapfile[i][j] != '\n' &&  mapfile[i][j] != '\0')
-// 		{
-// 			tile_path = display_tile(game);
-// 			game->tile.img = mlx_xpm_file_to_image(game->mlx, tile_path, \
-// 			&game->tile.tile_dimension, &game->tile.tile_dimension);
-// 			mlx_put_image_to_window(game->mlx, game->win, game->tile.img, \
-// 			game->map.w, game->map.h);
-// 			game->map.w += game->tile.tile_dimension;
-// 			j++;
-// 		}
-// 		i = 0;
-// 		i++;
-// 		game->map.h += game->tile.tile_dimension;
-// 	}
-// }
