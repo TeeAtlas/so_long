@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 18:22:14 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/01 14:27:46 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/01 15:00:44 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int	main(int argc, char **argv)
 	count_col_row(game);
 	read_map_array(game);
 	initialize_game(game);
+	image_to_map(game);
 	mlx_key_hook(game->mlx, &close_window, &param);
 	mlx_loop(game->mlx);
     return (EXIT_SUCCESS);
