@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 18:22:14 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/01 15:00:44 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/05 17:12:45 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	close_window(int keycode, t_param *param)
 
 int	main(int argc, char **argv)
 {	
-   t_game		*game;
+    t_game		*game;
 	t_param		param;
 	
 	(void) argc;
@@ -54,10 +54,9 @@ int	main(int argc, char **argv)
 	game->map.map_file = argv[1];
 	if (filecheck(game) == 0)
 		return (EXIT_FAILURE);
-	count_col_row(game);
-	read_map_array(game);
+	read_map(game);
+	// display_tile(game);
 	initialize_game(game);
-	image_to_map(game);
 	mlx_key_hook(game->mlx, &close_window, &param);
 	mlx_loop(game->mlx);
     return (EXIT_SUCCESS);

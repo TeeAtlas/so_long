@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:39:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/01 14:59:58 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/05 17:10:38 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,14 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
-# include "images_events.h"
+
+# define TILE       100
+# define FLOOR		"images/floor_100x100.xpm"
+# define KEY_ESC	53
+# define KEY_W		13
+# define KEY_A		0
+# define KEY_S		1
+# define KEY_D		2
 
 typedef struct s_param
 {
@@ -41,10 +48,11 @@ typedef struct s_param
 
 typedef struct s_tile
 {
+    void    *img;
+    void    *fl;
     int     w;
     int     h;;
 	int		tile_dimension;
-    void    *fl;
     // coordiates for placing tiles
 }    t_tile;
 
@@ -86,12 +94,12 @@ typedef struct s_game
 
 void    param_init(t_param *param);
 int     close_window(int keycode, t_param *param);
-void    count_col_row(t_game *game);
+void    read_map(t_game *game);
 void	read_map_array(t_game *game);
 
 
 // adding images
-void    image_to_map(t_game *game);
+void	image_xpm_to_map(t_game *game);
 
 //function to initialize game
 void    initialize_game(t_game *game);

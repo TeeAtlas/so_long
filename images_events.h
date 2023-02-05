@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 16:21:31 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/26 21:07:10 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/03 15:14:42 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # define TILE_SIZE    100
 
 
-# define FLOOR_TILE			"images/floor_100x100.xpm"
+# define FLOOR			"images/floor_100x100.xpm"
 # define WALL_TILE
 # define PLAYER_TILE
 # define COLLECT_TILE
