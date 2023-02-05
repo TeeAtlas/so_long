@@ -6,11 +6,14 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 23:35:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/05 17:10:57 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/05 23:30:37 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+// exit (0) = EXIT_SUCCESS
+// exit (1) = EXIT_FAILURE
 
 //Function checks whether character is valid map character.
 int	is_valid_map(char ch)
@@ -63,7 +66,7 @@ int	maplinelen(char *mapline)
 }
 
 //Function checks that map file dimensions are valid.
-// all lines are the same length
+// all lines are the same length -rectangular map
 int	valid_dimensions(char *mapfile)
 {
 	int		fd;
@@ -102,7 +105,7 @@ int	filecheck(t_game *game)
 	}
 	if (valid_dimensions(game->map.map_file) == 0)
 	{
-		ft_printf("Error: Invalid map dimensions\n");
+		ft_printf("Error: Map not rectangular.\n");
 		return (0);
 	}
 	else if (valid_dimensions(game->map.map_file) == 10)

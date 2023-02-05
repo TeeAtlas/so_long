@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:39:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/05 17:10:38 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/05 23:51:12 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,6 @@ typedef struct s_param
     int     y;
 }                t_param;
 
-// typedef struct s_img
-// {
-//     void    *mlx;
-//     char    *addr;
-//     char    *name;
-//     int     w;
-//     int     h;
-//     int     bpp;
-//     int     line_len;
-// }    t_img;
-
-
 typedef struct s_tile
 {
     void    *img;
@@ -53,16 +41,7 @@ typedef struct s_tile
     int     w;
     int     h;;
 	int		tile_dimension;
-    // coordiates for placing tiles
 }    t_tile;
-
-// typedef struct s_panel
-// {
-//     int         w;
-//     int         h;
-//     t_param     pos;
-// }    t_panel;
-
 
 typedef struct s_map
 {
@@ -71,7 +50,7 @@ typedef struct s_map
     int     w;
     int     h;
     char    *str;
-    char    *str_2;
+    char    *str_line;
     char    *array;
     char    **map_copy;
     t_tile  **tile;
@@ -95,7 +74,9 @@ typedef struct s_game
 void    param_init(t_param *param);
 int     close_window(int keycode, t_param *param);
 void    read_map(t_game *game);
-void	read_map_array(t_game *game);
+char	*mod_strdup(char *str);
+char	*mod_strjoin(char *str_a, char *str_b);
+int	    mod_strlcpy(char *dst, char *src, int len);
 
 
 // adding images
