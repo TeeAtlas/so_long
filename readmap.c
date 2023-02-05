@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 15:44:23 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/05 23:30:28 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/06 00:27:40 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,3 @@ void	read_map(t_game *game)
 	game->map.h = game->map.rows;
 	close(game->fd);
 }
-
-
-

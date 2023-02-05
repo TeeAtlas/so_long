@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:39:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/05 23:51:12 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/06 00:29:05 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef struct s_tile
 typedef struct s_map
 {
     char    *map_file;
+    char    *line;
     int     rows;
     int     w;
     int     h;
