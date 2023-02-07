@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 23:28:59 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/05 23:49:31 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/07 14:29:16 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	mod_strlcpy(char *dst, char *src, int len)
 }
 
 // modified strjoin without newline
-// joins lines into siglen arrage from map
+// joins lines into sig line arraged from map
 
 char	*mod_strjoin(char *str_a, char *str_b)
 {
