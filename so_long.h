@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:39:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/07 17:53:46 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/07 22:28:25 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ typedef struct s_map
     char    *str_line;
     char    *array;
     char    **map_copy;
-    t_tile  **tile;
 }    t_map;
 
 typedef struct s_game
@@ -76,7 +75,7 @@ void    param_init(t_param *param);
 int     close_window(int keycode);
 void    read_map(t_game *game);
 char	*mod_strdup(char *str);
-char	*mod_strjoin(char *str_a, char *str_b);
+char	*mod_join(char *str_a, char *str_b);
 int	    mod_strlcpy(char *dst, char *src, int len);
 
 
@@ -101,9 +100,6 @@ int     ends_ber(char *str);
 
 //Function frees a pointer returning a given value.
 int     free_num(void *ptr, int num);
-void    image_fail(t_game *game);
-
-//function  mallocs memory for map and map copy
-void	malloc_maps(t_game *game);
+// void    image_fail(t_game *game);
 
 #endif 

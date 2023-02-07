@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 23:28:59 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/07 17:30:57 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/07 20:48:46 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,28 +65,41 @@ int	mod_strlcpy(char *dst, char *src, int len)
 // modified strjoin without newline
 // joins lines into sig line arraged from map
 
-char	*mod_strjoin(char *str_a, char *str_b)
+char	*mod_join(char *str_a, char *str_b)
 {
-	char 	*new_str;
-	size_t	ct_str_a;
-	size_t	ct_str_b;
+	size_t	i;
+	size_t	j;
+	char	*res;
 
-	new_str = NULL;
-	if (str_a == NULL && str_b == NULL)
-		NULL;
-	else if (str_a == NULL)
-		return (mod_strdup(str_b));
-	else if (str_b == NULL)
-		return (mod_strdup(str_a));
-	ct_str_a = maplinelen(str_a);
-	ct_str_b = maplinelen(str_b);
-	new_str = malloc(ct_str_a + ct_str_b);
-	if (!new_str)
+	if (str_a == 0)
+	{
+		str_a = (char *)malloc(sizeof(char) * 1);
+		str_a[0] = '\0';
+	}
+	if (!str_a || !str_b)
 		return (NULL);
-	mod_strlcpy(new_str, str_a, ct_str_a + 1);
-	mod_strlcpy(new_str + ct_str_a, str_b, ct_str_b + 1);
-	free (str_a);
-	free (str_b);
-	return (new_str);
+	res = (char *)malloc(sizeof(char) * (ft_strlen(str_a) + ft_strlen(str_b) + 1));
+	if (!res)
+		return (NULL);
+	i = -1;
+	j = 0;
+	if (str_a)
+	{
+		while (str_a[++i] != '\0')
+		{
+			if (str_a[i] == '\n')
+				i++;
+			res[i] = str_a[i];
+		}
+	}
+	while (str_b[j] != '\0')
+	{
+		if (str_b[j] == '\n')
+			j++;
+		res[i++] = str_b[j++];
+	}
+	res[i] = '\0';
+	free(str_a);
+	return (res);
 }
 
