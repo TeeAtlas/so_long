@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 23:28:59 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/07 14:29:16 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/07 17:30:57 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	mod_strlcpy(char *dst, char *src, int len)
 		src_len++;
 	if (len == 0)
 		return (src_len);
-	while (i < len - 1 && src && src != '\n')
+	while (i < len - 1 && *src && *src != '\n')
 	{
 		dst[i] = src[i];
 		dst++;
@@ -68,23 +68,23 @@ int	mod_strlcpy(char *dst, char *src, int len)
 char	*mod_strjoin(char *str_a, char *str_b)
 {
 	char 	*new_str;
-	int		i;
-	int		j;
+	size_t	ct_str_a;
+	size_t	ct_str_b;
 
 	new_str = NULL;
 	if (str_a == NULL && str_b == NULL)
-		return (NULL);
+		NULL;
 	else if (str_a == NULL)
 		return (mod_strdup(str_b));
 	else if (str_b == NULL)
 		return (mod_strdup(str_a));
-	i = ft_strlen(str_a);
-	j = ft_strlen(str_b);
-	new_str = malloc(i + j);
+	ct_str_a = maplinelen(str_a);
+	ct_str_b = maplinelen(str_b);
+	new_str = malloc(ct_str_a + ct_str_b);
 	if (!new_str)
 		return (NULL);
-	mod_strlcpy(new_str, str_a, i + 1);
-	mod_strlcpy(new_str + i, str_b, j + 1);
+	mod_strlcpy(new_str, str_a, ct_str_a + 1);
+	mod_strlcpy(new_str + ct_str_a, str_b, ct_str_b + 1);
 	free (str_a);
 	free (str_b);
 	return (new_str);
