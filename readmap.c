@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 15:44:23 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/07 22:27:34 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/10 18:29:59 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,30 +18,28 @@
 
 void	read_map(t_game *game)
 {
-	char	*line;
-	
 	game->fd = open(game->map.map_file, O_RDONLY);
-	line =  get_next_line(game->fd);
+	game->map.line =  get_next_line(game->fd);
 	game->map.rows = 0;
 	game->map.h = 0;
-	if (!line)
+	if (!game->map.line)
 	{
 		ft_printf("Error: No file to read\n");
 		exit (EXIT_FAILURE);
 	}
-	game->map.str_line = mod_strdup(line);
-	game->map.w = maplinelen(line) - 1;
-	while (line)
+	game->map.str_line = ft_strdup(game->map.line);
+	game->map.w = maplinelen(game->map.line);
+	while (game->map.line)
 	{
 		game->map.h++;
-		line = get_next_line(game->fd);
-		if (line)
+		game->map.line = get_next_line(game->fd);
+		if (game->map.line)
 		{
-			game->map.str_line = mod_join(game->map.str_line, line);
+			game->map.str_line = ft_strjoin(game->map.str_line, game->map.line);
 		}
-		free(line);
+		free(game->map.line);
 	}
-	ft_printf("6what is here:%s\n", game->map.str_line); 
+	game->map.array = ft_split(game->map.str_line, '\n');
 	close(game->fd);
 }
 

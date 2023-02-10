@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:39:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/07 22:28:25 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/10 18:11:22 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 # include <unistd.h>
 # include <stdio.h>
 
-# define TILE       100
-# define FLOOR		"images/floor_100x100.xpm"
+# define TILE		100
+# define FLOOR		"/images/floor_100x100.xpm"
 # define KEY_ESC	53
 # define KEY_W		13
 # define KEY_A		0
@@ -30,76 +30,79 @@
 
 typedef struct s_param
 {
-    int     x;
-    int     y;
-}                t_param;
+	int		x;
+	int		y;
+} 		t_param;
 
 typedef struct s_tile
 {
-    void    *img;
-    void    *fl;
-    int     w;
-    int     h;;
+	void	*img;
+	void	*fl;
+	int		w;
+	int		h;;
 	int		tile_dimension;
-}    t_tile;
+}		t_tile;
 
 typedef struct s_map
 {
-    char    *map_file;
-    char    *line;
-    int     rows;
-    int     w;
-    int     h;
-    char    *str;
-    char    *str_line;
-    char    *array;
-    char    **map_copy;
-}    t_map;
+	char	*map_file;
+	char	*line;
+	int		rows;
+	int		w;
+	int		h;
+	char	*str;
+	char	*str_line;
+	char	**array;
+	char	**map_copy;
+}		t_map;
 
 typedef struct s_game
 {
-    void    *mlx;
-    void    *win;
-    int     fd;
-    int     w;
-    int     h;
-    int     bsize;
-    t_map   map;
-    t_tile  tile;
-}    t_game;
+	void	*mlx;
+	void	*win;
+	int		fd;
+	int		x;
+	int		y;
+	int		bsize;
+	t_map	map;
+	t_tile	tile;
+}		t_game;
 
 
 
 
-void    param_init(t_param *param);
-int     close_window(int keycode);
-void    read_map(t_game *game);
+void	param_init(t_param *param);
+int		close_window(int keycode);
+// static void	read_map_line(t_game *game);
+void	read_map(t_game *game);
 char	*mod_strdup(char *str);
 char	*mod_join(char *str_a, char *str_b);
-int	    mod_strlcpy(char *dst, char *src, int len);
+int		mod_strlcpy(char *dst, char *src, int len);
 
 
 // adding images
 void	image_xpm_to_map(t_game *game);
+void	load_image(t_game *game);
+
 
 //function to initialize game
-void    initialize_game(t_game *game);
+void	initialize_game(t_game *game);
 
 //Function checks whether an input file is valid.
-int     filecheck(t_game *game);
-void    image_fail(t_game *game);
+int		filecheck(t_game *game);
+void	image_fail(t_game *game);
 
 //Function checks that map file dimensions are valid.
-int     valid_dimensions(char *mapfile);
+int		valid_dimensions(char *mapfile);
 
 //strlen for maps
-int     maplinelen(char *mapline);
+int		maplinelen(char *mapline);
 
 //Function checks for a ".ber" ending in the string.
-int     ends_ber(char *str);
+int		ends_ber(char *str);
 
 //Function frees a pointer returning a given value.
-int     free_num(void *ptr, int num);
+int		free_num(void *ptr, int num);
 // void    image_fail(t_game *game);
 
 #endif 

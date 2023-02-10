@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 18:22:14 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/07 22:22:32 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/10 18:46:13 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,11 @@ void	initialize_game(t_game *game)
 	game->mlx = mlx_init();
 	game->tile.tile_dimension = TILE;
 	read_map(game);
-	game->mlx = mlx_new_window(game->mlx, game->map.w * TILE, \
+	ft_printf("HERE w: %i h: %i\n", game->map.w, game->map.h);
+	game->win = mlx_new_window(game->mlx, game->map.w * TILE, \
 	game->map.h * TILE, "Shadow of Dr. Manhattan");
+	ft_printf("HERE2 w: %i h: %i\n", game->map.w, game->map.h);
+	load_image(game);
 }
 
 int	close_window(int keycode)
@@ -55,7 +58,7 @@ int	main(int argc, char **argv)
 	if (filecheck(game) == 0)
 		return (EXIT_FAILURE);
 	initialize_game(game);
-	mlx_key_hook(game->mlx, &close_window, game);
+	mlx_key_hook(game->win, &close_window, game);
 	mlx_loop(game->mlx);
 	return (EXIT_SUCCESS);
 }
