@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:39:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/10 21:39:27 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/11 17:57:12 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ typedef struct s_game
 
 void	param_init(t_param *param);
 int		close_window(int keycode);
+
 // static void	read_map_line(t_game *game);
 void	read_map(t_game *game);
 char	*mod_strdup(char *str);
@@ -81,7 +82,7 @@ int		mod_strlcpy(char *dst, char *src, int len);
 
 
 // adding images
-void	image_xpm_to_map(t_game *game);
+void	xpm_to_pixel(t_game *game);
 void	load_image(t_game *game);
 
 
