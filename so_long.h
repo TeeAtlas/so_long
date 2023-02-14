@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:39:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/14 12:03:41 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/14 19:09:47 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@
 # include <stdio.h>
 
 # define TILE		100
-# define FLOOR		"./images/floor_starry_100x100.xpm"
-# define EXIT		"./images/exit_pink100X100.xpm"
-# define WALL		
+# define FLOOR		"./images/floor.xpm"
+# define EXIT		"./images/exit.xpm"
+# define PLAY		"./images/play.xpm"
+# define WALL		"./images/wall.xpm"
 # define COLL	
 
 # define KEY_ESC	53
@@ -43,6 +44,7 @@ typedef struct s_tile
 	// void	*img;
 	void	*fl;
 	void	*wl;
+	void	*pl;
 	void	*cl;
 	void	*ex;
 	int		w;
@@ -87,6 +89,8 @@ void	read_map(t_game *game);
 // adding images
 void	xpm_to_pixel_fl(t_game *game);
 void	xpm_to_pixel_ex(t_game *game);
+void	xpm_to_pixel_pl(t_game *game);
+void	xpm_to_pixel_wl(t_game *game);
 void	load_image(t_game *game);
 
 //function to initialize game
