@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:39:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/11 17:57:12 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/13 15:47:52 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@
 # include <stdio.h>
 
 # define TILE		100
-# define FLOOR		"/images/floor_100x100.xpm"
+# define FLOOR		"./images/floor_100x100.xpm"
+# define WALL		"./images/wall_100X100.xpm"
+# define COLL		"./images/collect_100x100.xpm"
+
 # define KEY_ESC	53
 # define KEY_W		13
 # define KEY_A		0
@@ -36,8 +39,10 @@ typedef struct s_param
 
 typedef struct s_tile
 {
-	void	*img;
+	// void	*img;
 	void	*fl;
+	void	*wl;
+	void	*cl;
 	int		w;
 	int		h;;
 	int		tile_dimension;
@@ -76,15 +81,12 @@ int		close_window(int keycode);
 
 // static void	read_map_line(t_game *game);
 void	read_map(t_game *game);
-char	*mod_strdup(char *str);
-char	*mod_join(char *str_a, char *str_b);
-int		mod_strlcpy(char *dst, char *src, int len);
-
 
 // adding images
-void	xpm_to_pixel(t_game *game);
+void	xpm_to_pixel_fl(t_game *game);
+void	xpm_to_pixel_wl(t_game *game);
+void	xpm_to_pixel_cl(t_game *game);
 void	load_image(t_game *game);
-
 
 //function to initialize game
 void	initialize_game(t_game *game);
