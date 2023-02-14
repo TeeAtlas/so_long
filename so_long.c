@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 18:22:14 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/13 10:47:54 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/14 12:00:07 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ void	initialize_game(t_game *game)
 	game->win = mlx_new_window(game->mlx, game->map.w * TILE, \
 	game->map.h * TILE, "Shadow of Dr. Manhattan");
 	xpm_to_pixel_fl(game);
-	xpm_to_pixel_wl(game);
-	xpm_to_pixel_cl(game);
+	xpm_to_pixel_ex(game);
 	load_image(game);
 }
 
