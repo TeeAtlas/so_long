@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:39:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/16 11:54:01 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/16 16:54:08 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,11 +87,12 @@ int		close_window(int keycode);
 void	read_map(t_game *game);
 
 // adding images
-void	xpm_to_pixel_fl(t_game *game);
-void	xpm_to_pixel_ex(t_game *game);
-void	xpm_to_pixel_pl(t_game *game);
-void	xpm_to_pixel_wl(t_game *game);
-void	xpm_to_pixel_cl(t_game *game);
+void	xpm_to_pixel(t_game *game);
+// void	xpm_to_pixel_fl(t_game *game);
+// void	xpm_to_pixel_ex(t_game *game);
+// void	xpm_to_pixel_pl(t_game *game);
+// void	xpm_to_pixel_wl(t_game *game);
+// void	xpm_to_pixel_cl(t_game *game);
 void	load_image(t_game *game);
 
 //function to initialize game

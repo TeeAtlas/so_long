@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 18:22:14 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/16 15:54:58 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/16 16:54:40 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,7 @@ void	initialize_game(t_game *game)
 	read_map(game);
 	game->win = mlx_new_window(game->mlx, game->map.w * TILE, \
 	game->map.h * TILE, "Owl and Rat");
-	xpm_to_pixel_fl(game);
-	xpm_to_pixel_ex(game);
-	xpm_to_pixel_pl(game);
-	xpm_to_pixel_wl(game);
-	xpm_to_pixel_cl(game);
+	xpm_to_pixel(game);
 	load_image(game);
 }
 
