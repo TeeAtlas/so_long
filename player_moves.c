@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 15:56:06 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/16 22:05:27 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/16 23:07:39 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ void	player_up(t_game *game)
 	i = game->x;
 	while (game->map.array[j])
 	{
-		while (game->map.arrry[j][])
+		while (game->map.array[j][i] == move)
+		 
 	}
 			
 		

@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:39:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/16 16:54:08 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/16 20:29:51 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ typedef struct s_tile
 	void	*ex;
 	void	*cl;
 	int		w;
-	int		h;;
+	int		h;
 	int		tile_dimension;
 }		t_tile;
 
@@ -80,7 +80,7 @@ typedef struct s_game
 
 
 
-void	param_init(t_param *param);
+// void	param_init(t_param *param);
 int		close_window(int keycode);
 
 // static void	read_map_line(t_game *game);
@@ -88,11 +88,6 @@ void	read_map(t_game *game);
 
 // adding images
 void	xpm_to_pixel(t_game *game);
-// void	xpm_to_pixel_fl(t_game *game);
-// void	xpm_to_pixel_ex(t_game *game);
-// void	xpm_to_pixel_pl(t_game *game);
-// void	xpm_to_pixel_wl(t_game *game);
-// void	xpm_to_pixel_cl(t_game *game);
 void	load_image(t_game *game);
 
 //function to initialize game
@@ -115,4 +110,9 @@ int		ends_ber(char *str);
 int		free_num(void *ptr, int num);
 // void    image_fail(t_game *game);
 
+void	player_up(t_game *game);
+void	player_down(t_game *game);
+void	player_left(t_game *game);
+void	player_right(t_game *game);
+int		player_moves(int keycode, t_game *game);
 #endif 
