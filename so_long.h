@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:39:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/14 19:09:47 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/16 11:54:01 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # define EXIT		"./images/exit.xpm"
 # define PLAY		"./images/play.xpm"
 # define WALL		"./images/wall.xpm"
-# define COLL	
+# define COLL		"./images/collect.xpm"
 
 # define KEY_ESC	53
 # define KEY_W		13
@@ -45,8 +45,8 @@ typedef struct s_tile
 	void	*fl;
 	void	*wl;
 	void	*pl;
-	void	*cl;
 	void	*ex;
+	void	*cl;
 	int		w;
 	int		h;;
 	int		tile_dimension;
@@ -91,6 +91,7 @@ void	xpm_to_pixel_fl(t_game *game);
 void	xpm_to_pixel_ex(t_game *game);
 void	xpm_to_pixel_pl(t_game *game);
 void	xpm_to_pixel_wl(t_game *game);
+void	xpm_to_pixel_cl(t_game *game);
 void	load_image(t_game *game);
 
 //function to initialize game
