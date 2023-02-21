@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 15:56:06 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/21 15:57:00 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/21 16:01:26 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int player_moves(int keycode, t_game *game)
 		player_left(game);
 	if (keycode == KEY_D)
 		player_right(game);
-	ft_printf("Heyo\n");
 	return (EXIT_SUCCESS);
 }
 
@@ -39,7 +38,6 @@ void	player_up(t_game *game)
 		game->map.array[game->pl_y][game->pl_x] = 'P';
 		load_image(game);
 	}
-	ft_printf("Hello2 is here:%d\n", game->pl_y);
 }
 
 
@@ -52,7 +50,6 @@ void	player_down(t_game *game)
 		game->map.array[game->pl_y][game->pl_x] = 'P';
 		load_image(game);
 	}
-	ft_printf("Hello3 is here:%d\n", game->pl_y);
 }
 
 void	player_left(t_game *game)
@@ -64,7 +61,6 @@ void	player_left(t_game *game)
 		game->map.array[game->pl_y][game->pl_x] = 'P';
 		load_image(game);
 	}
-	ft_printf("Hello4 is here:%d\n", game->pl_y);
 }
 
 void	player_right(t_game *game)
