@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 23:35:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/16 21:08:11 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/21 18:17:13 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	maplinelen(char *mapline)
 	while (mapline[i] != '\0')
 	{
 		if (is_valid_map(mapline[i]) == 1)
-			ct += 1;
+			ct += 1;git 
 		else if (mapline[i] == '\n')
 			ct += 0;
 		else

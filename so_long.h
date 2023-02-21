@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:39:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/21 15:33:30 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/21 18:08:02 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,9 @@ typedef struct s_game
 int		close_window(int keycode);
 
 // static void	read_map_line(t_game *game);
+void	find_player(t_game *game);
+void	walled_t_b(t_game *game);
+void	walled_sides(t_game *game);
 void	read_map(t_game *game);
 
 // adding images
@@ -99,22 +102,16 @@ void	initialize_game(t_game *game);
 //Function checks whether an input file is valid.
 int		filecheck(t_game *game);
 void	image_fail(t_game *game);
-
-//Function checks that map file dimensions are valid.
 int		valid_dimensions(char *mapfile);
-
-//strlen for maps
 int		maplinelen(char *mapline);
-
-//Function checks for a ".ber" ending in the string.
 int		ends_ber(char *str);
 
 //Function frees a pointer returning a given value.
 int		free_num(void *ptr, int num);
+
 // void    image_fail(t_game *game);
 
 int		player_moves(int keycode, t_game *game);
-void	find_player(t_game *game);
 void	player_up(t_game *game);
 void	player_down(t_game *game);
 void	player_left(t_game *game);

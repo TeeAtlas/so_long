@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 15:44:23 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/21 17:27:13 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/21 18:08:56 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 // exit (0) = EXIT_SUCCESS
 // exit (1) = EXIT_FAILURE
 
-int	walled_t_b(t_game *game)
+void	walled_t_b(t_game *game)
 {
 	int	i;
 	int	j;
@@ -28,20 +28,35 @@ int	walled_t_b(t_game *game)
 		while (i < game->map.w)
 		{
 			if (game->map.array[0][i] != '1')
-			{
-				ft_printf("Error: Not walled in\n");
-				exit ;
-			}
+				ft_printf("Error: Not walled in!\n");
 			if (game->map.array[j][i] != '1')
-			{
-				ft_printf("Error: Not walled in\n");
-				exit ;
-			}
+				ft_printf("Error: Not walled in!\n");
 			i++;
 		}
-		return (0);
 	}
-	return (1);
+	exit (EXIT_FAILURE);
+}
+
+void	walled_sides(t_game *game)
+{
+	int	i;
+	int	j;
+	
+	i = game->map.w - 1;
+	j = 0;
+	while (game->map.array[i])
+	{
+		while (j < game->map.h)
+		{
+			if (game->map.array[j][0] != '1')
+				ft_printf("Error: Not walled in!\n");
+			if (game->map.array[j][i] != '1')
+				ft_printf("Error: Not walled in!\n");
+			j++;
+		}
+	}
+	exit (EXIT_FAILURE);
+	
 }
 
 void	find_player(t_game *game)
