@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 15:44:23 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/16 19:14:12 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/21 14:43:31 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,29 @@
 //counts columns and rows ie: height(row) and width(col)
 // exit (0) = EXIT_SUCCESS
 // exit (1) = EXIT_FAILURE
+
+void	find_player(t_game *game)
+{
+	int i;
+	int j;
+	
+	i = 0;
+	j = 0;
+	while (game->map.array[j])
+	{
+		while (game->map.array[j][i])
+		{
+			if (game->map.array[j][i] == 'P')
+			{				
+				game->pl_x = i;
+				game->pl_y = j;
+			}			
+			i++;
+		}
+		i = 0;
+		j++;
+	}			
+}
 
 void	read_map(t_game *game)
 {

@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 15:56:06 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/21 12:33:51 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/21 14:35:50 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,35 +28,10 @@ int player_moves(int keycode, t_game *game)
 	return (EXIT_SUCCESS);
 }
 
-void	find_player(t_game *game)
-{
-	int	i;
-	int	j;
-
-	j = 0;
-	i = 0;
-	game->pl_x = j;
-	game->pl_y = i;
-	
-	while (game->map.array[game->pl_y])
-	{
-		if (game->map.array[game->pl_y][game->pl_x] == 'P')
-			game->pl_pos = game->map.array[game->pl_y][game->pl_x];
-		game->pl_x++;
-	}
-	game->pl_x = 0;
-	game->pl_y++;
-}
-
 void	player_up(t_game *game)
 {	
 	// CHANGE PLAYER in MAP by WRITING:
 	// MAP[i][j] (player) -> MAP[i - 1][j]
-	ft_printf("Hello2\n");
-	find_player(game);
-	ft_printf("here %d\n", game->pl_y);
-	if (game->map.array[game->pl_y - 1][game->pl_x] == '1')
-		return ;
 	
 }
 

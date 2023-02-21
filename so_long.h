@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:39:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/21 12:28:58 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/21 14:23:23 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,6 @@ typedef struct s_game
 	int		fd;
 	int		pl_x;
 	int		pl_y;
-	int		pl_pos;
 	int		x;
 	int		y;
 	int		bsize;

@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 18:22:14 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/21 12:35:39 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/21 14:22:02 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	initialize_game(t_game *game)
 	game->map.h * TILE, "Owl and Rat");
 	xpm_to_pixel(game);
 	load_image(game);
-	player_up(game);
+	find_player(game);
 }
 
 int	close_window(int keycode)
