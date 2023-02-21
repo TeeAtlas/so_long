@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:39:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/21 14:23:23 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/21 15:33:30 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,8 +116,8 @@ int		free_num(void *ptr, int num);
 int		player_moves(int keycode, t_game *game);
 void	find_player(t_game *game);
 void	player_up(t_game *game);
-// void	player_down(t_game *game);
-// void	player_left(t_game *game);
-// void	player_right(t_game *game);
+void	player_down(t_game *game);
+void	player_left(t_game *game);
+void	player_right(t_game *game);
 
 #endif 

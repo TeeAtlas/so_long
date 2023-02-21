@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 18:22:14 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/21 14:22:02 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/21 15:57:55 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,6 @@ void	initialize_game(t_game *game)
 	xpm_to_pixel(game);
 	load_image(game);
 	find_player(game);
-}
-
-int	close_window(int keycode)
-{
-	if (keycode == KEY_ESC)
-		exit(0);
-	return(EXIT_SUCCESS);
 }
 
 int destroy(t_game *game)
@@ -66,7 +59,6 @@ int	main(int argc, char **argv)
 	if (filecheck(game) == 0)
 		return (EXIT_FAILURE);
 	initialize_game(game);
-	mlx_key_hook(game->win, close_window, game);
 	mlx_hook(game->win, 17, 0, destroy, game);
 	mlx_key_hook(game->win, player_moves, game); 
 	mlx_loop(game->mlx);
