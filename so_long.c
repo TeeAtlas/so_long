@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 18:22:14 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/16 19:56:34 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/21 12:35:39 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	initialize_game(t_game *game)
 	game->map.h * TILE, "Owl and Rat");
 	xpm_to_pixel(game);
 	load_image(game);
+	player_up(game);
 }
 
 int	close_window(int keycode)
@@ -39,19 +40,17 @@ int	close_window(int keycode)
 	return(EXIT_SUCCESS);
 }
 
-// int	exit_game(t_game *game)
-// {
-// 	mlx_destroy_window(game->mlx, game->win);
-// 	free_num(game->win, 10);
-// 	free(game->map.map_file);
-// 	exit(EXIT_SUCCESS);
-// }
+int destroy(t_game *game)
+{
+	mlx_destroy_window(game->mlx, game->win);
+	exit (EXIT_SUCCESS);
+}
 
 void	arg_check(int argc)
 {
 	if (argc !=2)
 	{
-		ft_printf("System Failure: no map to the stars!\n", argc);
+		ft_printf("System Failure: Owl is sleeeeeeping!\n", argc);
 		exit (EXIT_FAILURE);
 	}
 }
@@ -67,9 +66,9 @@ int	main(int argc, char **argv)
 	if (filecheck(game) == 0)
 		return (EXIT_FAILURE);
 	initialize_game(game);
-	mlx_key_hook(game->win, &close_window, game);
-	// mlx_hook(game->win, 17, 0L, &close_window, game);
-	mlx_key_hook(game->win, &player_moves, game);
+	mlx_key_hook(game->win, close_window, game);
+	mlx_hook(game->win, 17, 0, destroy, game);
+	mlx_key_hook(game->win, player_moves, game); 
 	mlx_loop(game->mlx);
 	return (EXIT_SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:39:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/16 20:29:51 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/21 12:28:58 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,12 @@
 # define KEY_S		1
 # define KEY_D		2
 
-typedef struct s_param
-{
-	int		x;
-	int		y;
-} 		t_param;
+
+// typedef struct s_param
+// {
+// 	int		x;
+// 	int		y;
+// } 		t_param;
 
 typedef struct s_tile
 {
@@ -70,6 +71,9 @@ typedef struct s_game
 	void	*mlx;
 	void	*win;
 	int		fd;
+	int		pl_x;
+	int		pl_y;
+	int		pl_pos;
 	int		x;
 	int		y;
 	int		bsize;
@@ -110,9 +114,11 @@ int		ends_ber(char *str);
 int		free_num(void *ptr, int num);
 // void    image_fail(t_game *game);
 
-void	player_up(t_game *game);
-void	player_down(t_game *game);
-void	player_left(t_game *game);
-void	player_right(t_game *game);
 int		player_moves(int keycode, t_game *game);
+void	find_player(t_game *game);
+void	player_up(t_game *game);
+// void	player_down(t_game *game);
+// void	player_left(t_game *game);
+// void	player_right(t_game *game);
+
 #endif 
