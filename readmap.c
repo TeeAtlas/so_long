@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 15:44:23 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/22 12:02:06 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/22 17:20:49 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,144 +16,25 @@
 // exit (0) = EXIT_SUCCESS
 // exit (1) = EXIT_FAILURE
 
-void	printsplit(char **split)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (split[i])
-	{
-		j = 0;
-		while (split[i][j])
-		{
-			ft_printf("%c", split[i][j]);
-			j++;
-		}
-		ft_printf("\n");
-		i++;
-	}
-}
-
-// void	walled_t_b(t_game *game)
+// void	printsplit(char **split)
 // {
 // 	int	i;
 // 	int	j;
 
 // 	i = 0;
-// 	j = game->map.h - 1;
-// 	while (game->map.array[i])
+// 	j = 0;
+// 	while (split[i])
 // 	{
-// 		while (i < game->map.w)
+// 		j = 0;
+// 		while (split[i][j])
 // 		{
-// 			if (game->map.array[0][i] != '1')
-// 				ft_printf("Error: Not walled in!\n");
-// 			if (game->map.array[j][i] != '1')
-// 				ft_printf("Error: Not walled in!\n");
-// 			i++;
+// 			ft_printf("%c", split[i][j]);
+// 			j++;
 // 		}
+// 		ft_printf("\n");
+// 		i++;
 // 	}
-// 	exit (EXIT_FAILURE);
 // }
-
-void	minmap(t_game *game)
-{
-	int	i;
-	int	j;
-	int	wallcount;
-	int	floorcount;
-	int	collcount;
-	int	playerct;
-	int	exitcount;
-	
-	wallcount = 0;
-	floorcount = 0;
-	collcount = 0;
-	playerct = 0;
-	exitcount = 0;
-	i = 0;
-	j = 0;
-	while (i < game->map.h - 1)
-	{
-		j = 0;
-		while (j < game->map.w - 1)
-		{
-			if (game->map.array[i][j] == '1')
-				wallcount++;
-			if (game->map.array[i][j] == '0')
-				floorcount++;
-			if (game->map.array[i][j] == 'C')
-				collcount++;
-			if (game->map.array[i][j] == 'P')
-				playerct++;
-			if (game->map.array[i][j] == 'E')
-				exitcount++;
-			j++;
-		}
-		i++;
-	}
-	if (collcount < 1 || exitcount != 1 || playerct != 1)
-	{
-		// ft_printf("Coll: %i, Exit: %i, Play: %i\n", collcount, exitcount, playerct);
-		ft_printf("Error: Wrong number of map elements!\n");
-		free_game(game);
-		exit(EXIT_FAILURE);
-	}
-}
-
-void	notwalledinexit(t_game *game)
-{
-	ft_printf("Error: Not walled in!\n");
-	free_game(game);
-	exit(EXIT_FAILURE);
-}
-
-void	walled_sides(t_game *game)
-{
-	int	i;
-	int	j;
-	
-	i = 0;
-	j = 0;
-	while (i < game->map.h - 1)
-	{
-		if (game->map.array[i][j] != '1')
-			notwalledinexit(game);
-		i++;
-	}
-	i = 0;
-	j = game->map.w - 1;
-	while (i < game->map.h - 1)
-	{
-		if (game->map.array[i][j] != '1')
-			notwalledinexit(game);
-		i++;
-	}
-}
-
-void	walled_topbottom(t_game *game)
-{
-	int	i;
-	int	j;
-	
-	i = 0;
-	j = 0;
-	while (j < game->map.w - 1)
-	{
-		if (game->map.array[i][j] != '1')
-			notwalledinexit(game);
-		j++;
-	}
-	j = 0;
-	i = game->map.h - 1;
-	while (j < game->map.w - 1)
-	{
-		if (game->map.array[i][j] != '1')
-			notwalledinexit(game);
-		j++;
-	}
-}
 
 void	find_player(t_game *game)
 {
