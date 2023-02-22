@@ -6,13 +6,13 @@
 #    By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 12:41:36 by taboterm          #+#    #+#              #
-#    Updated: 2023/02/22 02:50:18 by taboterm         ###   ########.fr        #
+#    Updated: 2023/02/22 17:21:12 by taboterm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # source id
 SRCS = so_long.c map_check.c freeing.c\
-	readmap.c display_tile.c player_moves.c\
+	readmap.c display_tile.c player_moves.c min_characters.c\
 
 
 OBJS = $(SRCS:%.c=%.o)
