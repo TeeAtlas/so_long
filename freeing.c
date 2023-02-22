@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 01:34:16 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/22 01:53:33 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/22 17:39:08 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,18 @@ void	free_game(t_game *game)
 	free(game->map.str_line);
 	free_split(game->map.array);
 	free(game);
+}
+
+void	too_few(t_game *game)
+{
+	ft_printf("Error: Wrong number of elements\n");
+	free_game(game);
+	exit(EXIT_FAILURE);
+}
+
+void	notwalledinexit(t_game *game)
+{
+	ft_printf("Error: Not walled in!\n");
+	free_game(game);
+	exit(EXIT_FAILURE);
 }
