@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:39:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/22 13:56:30 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/22 17:28:23 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,8 @@
 # define KEY_S		1
 # define KEY_D		2
 
-
-// typedef struct s_param
-// {
-// 	int		x;
-// 	int		y;
-// } 		t_param;
-
 typedef struct s_tile
 {
-	// void	*img;
 	void	*fl;
 	void	*wl;
 	void	*pl;
@@ -63,13 +55,17 @@ typedef struct s_map
 	char	*str;
 	char	*str_line;
 	char	**array;
-	char	**map_copy;
 }		t_map;
 
 typedef struct s_game
 {
 	void	*mlx;
 	void	*win;
+	int		wl_ct;
+	int		fl_ct;
+	int		cl_ct;
+	int		pl_ct;
+	int		ex_ct;
 	int		fd;
 	int		pl_x;
 	int		pl_y;
@@ -80,18 +76,14 @@ typedef struct s_game
 	t_tile	tile;
 }		t_game;
 
-
-
-
-// void	param_init(t_param *param);
-int		close_window(int keycode);
-
 // static void	read_map_line(t_game *game);
 void	find_player(t_game *game);
+void	read_map(t_game *game);
+
+// counting and confirming valid number if characters in map
+void	min_char_1(t_game *game);
 void	walled_sides(t_game *game);
 void	walled_topbottom(t_game *game);
-void	minmap(t_game *game);
-void	read_map(t_game *game);
 
 // adding images
 void	xpm_to_pixel(t_game *game);
@@ -99,6 +91,7 @@ void	load_image(t_game *game);
 
 //function to initialize game
 void	initialize_game(t_game *game);
+void	arg_check(int argc);
 
 //Function checks whether an input file is valid.
 int		filecheck(t_game *game);
@@ -109,7 +102,10 @@ int		ends_ber(char *str);
 
 //Function frees a pointer returning a given value.
 int		free_num(void *ptr, int num);
+void	free_split(char **split);
 void	free_game(t_game *game);
+void	too_few(t_game *game);
+void	notwalledinexit(t_game *game);
 
 // void    image_fail(t_game *game);
 
