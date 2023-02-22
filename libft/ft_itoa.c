@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 16:51:41 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/12 11:44:20 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/22 18:36:15 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,8 @@ char	*ft_itoa(int n)
 	return (num);
 }
 
-int	main(void)
-{
- 	printf("return is:\n%s\n",ft_itoa(-3456));
-	return (0);
-}
+// int	main(void)
+// {
+//  	printf("return is:\n%s\n",ft_itoa(-3456));
+// 	return (0);
+// }
