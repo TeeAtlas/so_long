@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 18:22:14 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/22 02:41:20 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/22 17:21:43 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ void	initialize_game(t_game *game)
 	game->mlx = mlx_init();
 	game->tile.tile_dimension = TILE;
 	read_map(game);
-	minmap(game);
+	min_char_1(game);
 	walled_sides(game);
 	walled_topbottom(game);
 	xpm_to_pixel(game);
 	game->win = mlx_new_window(game->mlx, game->map.w * TILE, \
-								game->map.h * TILE, "Owl and Rat");
+								game->map.h * TILE, "./so_long");
 	load_image(game);
 	find_player(game);
 }
@@ -46,7 +46,7 @@ void	arg_check(int argc)
 {
 	if (argc !=2)
 	{
-		ft_printf("System Failure: Owl is sleeeeeeping!\n", argc);
+		ft_printf("System Failure: Too few arguements!\n", argc);
 		exit (EXIT_FAILURE);
 	}
 }
