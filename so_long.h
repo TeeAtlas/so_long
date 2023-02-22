@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:39:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/21 18:08:02 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/22 02:04:14 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,9 @@ int		close_window(int keycode);
 
 // static void	read_map_line(t_game *game);
 void	find_player(t_game *game);
-void	walled_t_b(t_game *game);
 void	walled_sides(t_game *game);
+void	walled_topbottom(t_game *game);
+void	minmap(t_game *game);
 void	read_map(t_game *game);
 
 // adding images
@@ -108,6 +109,7 @@ int		ends_ber(char *str);
 
 //Function frees a pointer returning a given value.
 int		free_num(void *ptr, int num);
+void	free_game(t_game *game);
 
 // void    image_fail(t_game *game);
 

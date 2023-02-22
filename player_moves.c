@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 15:56:06 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/21 16:01:26 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/22 01:48:38 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int player_moves(int keycode, t_game *game)
 		exit(0);
 	if (keycode == KEY_W)
 		player_up(game);
-	ft_printf("Hello1\n");
 	if (keycode == KEY_S)
 		player_down(game);
 	if (keycode == KEY_A)
@@ -39,7 +38,6 @@ void	player_up(t_game *game)
 		load_image(game);
 	}
 }
-
 
 void	player_down(t_game *game)
 {

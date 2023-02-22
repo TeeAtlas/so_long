@@ -6,7 +6,7 @@
 #    By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 12:41:36 by taboterm          #+#    #+#              #
-#    Updated: 2023/02/21 12:41:43 by taboterm         ###   ########.fr        #
+#    Updated: 2023/02/22 02:50:18 by taboterm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,8 @@ SRCS = so_long.c map_check.c freeing.c\
 OBJS = $(SRCS:%.c=%.o)
 
 # Compiling info
-CC = gcc
-CFLAGS = -Wall -Werror -Wextra -g
+CC = cc
+CFLAGS = -Wall -Werror -Wextra -g -fsanitize=address
 MFLAGS = -L${MLX_DIR} -I$(MLX_PATH) -lmlx -lm -framework OpenGL -framework AppKit
 
 # Target output
