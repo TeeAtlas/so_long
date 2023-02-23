@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:39:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/22 18:20:15 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/23 12:54:16 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,6 @@
 
 typedef struct s_tile
 {
-	void	*fl;
-	void	*wl;
-	void	*pl;
-	void	*ex;
-	void	*cl;
 	int		w;
 	int		h;
 	int		tile_dimension;
@@ -61,6 +56,11 @@ typedef struct s_game
 {
 	void	*mlx;
 	void	*win;
+	void	*fl;
+	void	*ex;
+	void	*pl;
+	void	*wl;
+	void	*cl;
 	int		wl_ct;
 	int		fl_ct;
 	int		cl_ct;
