@@ -6,12 +6,12 @@
 #    By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 12:41:36 by taboterm          #+#    #+#              #
-#    Updated: 2023/02/22 18:26:42 by taboterm         ###   ########.fr        #
+#    Updated: 2023/02/24 13:37:12 by taboterm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # source id
-SRCS = so_long.c map_check.c freeing.c\
+SRCS = so_long.c map_check.c freeing.c freeing_2.c\
 	read_map.c display_tile.c player_moves.c elements.c\
 
 

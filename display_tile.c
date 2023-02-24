@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 18:14:26 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/23 13:03:40 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/23 21:09:44 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ void	load_image(t_game *game)
 	{
 		while (game->map.array[j][i])
 		{
-		// 	if (game->map.array[j][i] == '0')
-		// 		mlx_put_image_to_window(game->mlx, game->win, game->fl, i * TILE, j * TILE);
+			if (game->map.array[j][i] == '0')
+				mlx_put_image_to_window(game->mlx, game->win, game->fl, i * TILE, j * TILE);
 			if (game->map.array[j][i] == 'E')
 				mlx_put_image_to_window(game->mlx, game->win, game->ex, i * TILE, j * TILE);
 			if (game->map.array[j][i] == 'P')

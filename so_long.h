@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/20 15:39:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/24 16:08:46 by taboterm         ###   ########.fr       */
+/*   Created: 2023/02/24 16:27:31 by taboterm          #+#    #+#             */
+/*   Updated: 2023/02/24 16:28:50 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,11 @@ typedef struct s_game
 	void	*cl;
 	int		wl_ct;
 	int		fl_ct;
-	int		cl_ct;
+	int		cl_ct; //current number of collectables in map
 	int		pl_ct;
 	int		ex_ct;
 	int		moves_ct;
-	int		coll_count;
+	int		coll_count; //count of collected collectables
 	int		fd;
 	int		pl_x;
 	int		pl_y;
@@ -110,10 +110,10 @@ void	free_game(t_game *game);
 void	too_few(t_game *game);
 void	notwalledinexit(t_game *game);
 int		destroy(t_game *game);
+void	no_file(t_game *game);
 void	game_over(t_game  *game);
 
-// void    image_fail(t_game *game);
-
+// void moveing player with keys etc
 int		player_moves(int keycode, t_game *game);
 void	player_up(t_game *game);
 void	player_down(t_game *game);
