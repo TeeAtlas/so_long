@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:39:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/23 12:54:16 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/24 11:25:41 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ typedef struct s_game
 	int		cl_ct;
 	int		pl_ct;
 	int		ex_ct;
+	int		moves_ct;
+	int		coll_count;
 	int		fd;
 	int		pl_x;
 	int		pl_y;
