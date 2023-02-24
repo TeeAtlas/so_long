@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 18:22:14 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/24 16:37:53 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/24 17:13:12 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void	initialize_game(t_game *game)
 	game->mlx = mlx_init();
 	game->tile.tile_dimension = TILE;
 	read_map(game);
+	elements_init(game);
 	min_char(game);
-	max_char(game);
 	walled_sides(game);
 	walled_topbottom(game);
 	xpm_to_pixel(game);
@@ -58,6 +58,7 @@ int	main(int argc, char **argv)
 		return (EXIT_FAILURE);
 	initialize_game(game);
 	game->moves_ct = 0;
+	game->coll_count = 0;
 	mlx_hook(game->win, 17, 0, destroy, game);
 	mlx_key_hook(game->win, player_moves, game); 
 	mlx_loop(game->mlx);
