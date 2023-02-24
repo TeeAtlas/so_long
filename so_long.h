@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:39:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/24 11:25:41 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/24 16:08:46 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,8 @@ void	free_split(char **split);
 void	free_game(t_game *game);
 void	too_few(t_game *game);
 void	notwalledinexit(t_game *game);
+int		destroy(t_game *game);
+void	game_over(t_game  *game);
 
 // void    image_fail(t_game *game);
 
