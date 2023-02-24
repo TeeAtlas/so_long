@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 15:44:23 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/22 18:32:30 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/24 13:26:00 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	find_player(t_game *game)
 	
 	i = 0;
 	j = 0;
+	game->coll_count = 0;
 	while (game->map.array[j])
 	{
 		while (game->map.array[j][i])
@@ -52,6 +53,8 @@ void	find_player(t_game *game)
 				game->pl_x = i;
 				game->pl_y = j;
 			}			
+			if (game->map.array[j][i] == 'C')
+				game->coll_count++;
 			i++;
 		}
 		i = 0;
