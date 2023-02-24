@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 18:22:14 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/24 17:13:12 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/24 17:21:49 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	initialize_game(t_game *game)
 	game->tile.tile_dimension = TILE;
 	read_map(game);
 	elements_init(game);
-	min_char(game);
+	min_max_elements(game);
 	walled_sides(game);
 	walled_topbottom(game);
 	xpm_to_pixel(game);
