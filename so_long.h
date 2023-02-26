@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 16:27:31 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/26 15:02:50 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/26 17:51:54 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,8 @@ typedef struct s_game
 	int		ex_ct;
 	int		moves_ct;
 	int		coll_count; //count of collected collectables
-	int		reach_ct;
-	int		ell_ct;
+	int		reach_ct; // reachable exits and collectables
+	int		ell_ct; // exits and collectable count
 	int		fd;
 	int		pl_x;
 	int		pl_y;
@@ -84,10 +84,15 @@ void	find_player(t_game *game);
 void	read_map(t_game *game);
 
 // counting and confirming valid number if characters in map
-void	min_max_elements(t_game *game, int i, int j);
+void	elements_list(t_game *game, int i, int j);
+void	min_max_elements(t_game *game);
 void	elements_init(t_game *game);
 void	walled_sides(t_game *game);
 void	walled_topbottom(t_game *game);
+
+// valid path function
+void	reachables(t_game *game, int x, int y);
+int		is_valid_path(t_game *game);
 
 // adding images
 void	xpm_to_pixel(t_game *game);

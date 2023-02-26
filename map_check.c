@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 23:35:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/22 00:10:50 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/26 18:09:35 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int	valid_dimensions(char *mapfile)
 //Function checks whether an input file is valid.
 // distribution for parser
 int	filecheck(t_game *game)
-{
+{	
 	if (ends_ber(game->map.map_file) == 0)
 	{
 		ft_printf("Error: Filename\n");

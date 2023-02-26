@@ -6,11 +6,13 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 17:18:38 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/26 15:03:11 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/26 18:23:08 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+// init all pointers to null and all int to 0
 
 void	elements_init(t_game *game)
 {
@@ -23,8 +25,24 @@ void	elements_init(t_game *game)
 	game->ell_ct = 0;
 }
 
-void	min_max_elements(t_game *game, int i, int j)
+
+void	elements_list(t_game *game, int i, int j)
 {
+	if (game->map.array[i][j] == '0')
+		game->fl_ct++;
+	if (game->map.array[i][j] == 'C')
+		game->cl_ct++;
+	if (game->map.array[i][j] == 'P')
+		game->pl_ct++;
+	if (game->map.array[i][j] == 'E')
+		game->ex_ct++;
+}
+
+void	min_max_elements(t_game *game)
+{
+	int i;
+	int j;
+	
 	i = 0;
 	j = 0;
 	while (i < game->map.h - 1)
@@ -32,14 +50,7 @@ void	min_max_elements(t_game *game, int i, int j)
 		j = 0;
 		while (j < game->map.w - 1)
 		{
-			if (game->map.array[i][j] == '0')
-				game->fl_ct++;
-			if (game->map.array[i][j] == 'C')
-				game->cl_ct++;
-			if (game->map.array[i][j] == 'P')
-				game->pl_ct++;
-			if (game->map.array[i][j] == 'E')
-				game->ex_ct++;
+			elements_list(game, i , j);
 			j++;
 		}
 		i++;
