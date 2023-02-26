@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 17:18:38 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/24 17:25:24 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/25 19:00:30 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	elements_init(t_game *game)
 	game->pl_ct = 0;
 	game->ex_ct = 0;
 	game->coll_count = 0;
+	game->reach_ct = 0;
+	game->ell_ct = 0;
 }
 
 void	min_max_elements(t_game *game)

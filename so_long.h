@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 16:27:31 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/24 17:24:27 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/25 19:00:15 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,13 @@ typedef struct s_game
 	int		ex_ct;
 	int		moves_ct;
 	int		coll_count; //count of collected collectables
+	int		reach_ct;
+	int		ell_ct;
 	int		fd;
 	int		pl_x;
 	int		pl_y;
 	int		x;
 	int		y;
-	int		bsize;
 	t_map	map;
 	t_tile	tile;
 }		t_game;
