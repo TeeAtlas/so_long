@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 17:42:23 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/25 18:59:12 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/26 15:06:07 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	valid_path(t_game *game)
 
 	x = game->pl_x;
 	y = game->pl_y;
-	reachables(game, x,y);
+	reachables(game, x, y);
 	if (game->ell_ct != game->reach_ct)
 	{
 		ft_printf("Error: No Valid Path\n");

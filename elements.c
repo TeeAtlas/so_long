@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 17:18:38 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/25 19:00:30 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/26 15:03:11 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,8 @@ void	elements_init(t_game *game)
 	game->ell_ct = 0;
 }
 
-void	min_max_elements(t_game *game)
+void	min_max_elements(t_game *game, int i, int j)
 {
-	int	i;
-	int	j;
-	
 	i = 0;
 	j = 0;
 	while (i < game->map.h - 1)
@@ -47,7 +44,9 @@ void	min_max_elements(t_game *game)
 		}
 		i++;
 	}
-	if (game->fl_ct < 1 || game->cl_ct < 1)
+	game->ell_ct = game->cl_ct + game->ex_ct;
+	if (game->fl_ct < 1 || game->cl_ct < 1 || \
+			game->ex_ct != 1 || game->pl_ct != 1)
 		too_few(game);
 }
 
@@ -55,7 +54,7 @@ void	walled_sides(t_game *game)
 {
 	int	i;
 	int	j;
-	
+
 	i = 0;
 	j = 0;
 	while (i < game->map.h - 1)
@@ -78,7 +77,7 @@ void	walled_topbottom(t_game *game)
 {
 	int	i;
 	int	j;
-	
+
 	i = 0;
 	j = 0;
 	while (j < game->map.w - 1)

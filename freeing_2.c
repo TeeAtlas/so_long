@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 13:39:07 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/24 17:20:57 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/26 15:12:16 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,5 @@ void	game_over(t_game  *game)
 {
 	ft_printf("You're out! You did it in %d moves.\n", game->moves_ct);
 	free_game(game);
+	exit(EXIT_FAILURE);
 }

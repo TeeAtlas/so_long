@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 16:27:31 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/25 19:00:15 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/26 15:02:50 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	find_player(t_game *game);
 void	read_map(t_game *game);
 
 // counting and confirming valid number if characters in map
-void	min_max_elements(t_game *game);
+void	min_max_elements(t_game *game, int i, int j);
 void	elements_init(t_game *game);
 void	walled_sides(t_game *game);
 void	walled_topbottom(t_game *game);
