@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 16:27:31 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/26 17:51:54 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/27 20:03:57 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ typedef struct s_map
 	char	*str;
 	char	*str_line;
 	char	**array;
+	char	**array_cpy;
 }		t_map;
 
 typedef struct s_game
