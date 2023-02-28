@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 18:22:14 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/27 20:09:06 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/28 13:44:54 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,6 @@ int	main(int argc, char **argv)
 	initialize_game(game);
 	if (is_valid_path(game) == 0)
 		return (EXIT_SUCCESS);
-	game->moves_ct = 0;
-	game->coll_count = 0;
 	mlx_hook(game->win, 17, 0, destroy, game);
 	mlx_key_hook(game->win, player_moves, game); 
 	mlx_loop(game->mlx);
