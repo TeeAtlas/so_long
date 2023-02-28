@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 16:27:31 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/27 20:03:57 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/02/28 14:22:05 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@
 
 typedef struct s_tile
 {
-	int		w;
-	int		h;
 	int		tile_dimension;
 }		t_tile;
 
