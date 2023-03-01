@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 17:18:38 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/28 14:05:54 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/03/01 20:25:37 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	elements_list(t_game *game, int i, int j)
 		game->cl_ct++;
 	if (game->map.array[i][j] == 'P')
 		game->pl_ct++;
-	if (game->map.array[i][j] == 'E')
+	if (game->map.array[i][j] == 'E') // checking each and incrementing each one
 		game->ex_ct++;
 }
 
@@ -77,7 +77,7 @@ void	walled_sides(t_game *game)
 		i++;
 	}
 	i = 0;
-	j = game->map.w - 2;
+	j = game->map.w - 1;
 	ft_printf("checking right\n");
 	while (i < game->map.h - 1)
 	{
