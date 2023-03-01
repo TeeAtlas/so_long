@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 15:44:23 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/27 20:01:05 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/03/01 20:19:47 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,21 +42,21 @@ void	read_map(t_game *game)
 	game->map.h = 0;
 	game->map.rows = 0;
 	game->fd = open(game->map.map_file, O_RDONLY);
-	game->map.line =  get_next_line(game->fd);
+	game->map.line =  get_next_line(game->fd); //populating line
 	if (!game->map.line)
 		no_file(game);
 	game->map.w = maplinelen(game->map.line);
 	game->map.str_line = ft_strdup(game->map.line);
-	while (game->map.line)
+	while (game->map.line) // as long as this line in populated
 	{
 		game->map.h++;
 		if (game->map.h > 1)
 		{
-			temp = ft_strjoin(game->map.str_line, game->map.line);
+			temp = ft_strjoin(game->map.str_line, game->map.line); //join first to second line
 			free(game->map.str_line);
 			game->map.str_line = temp;
 		}
-		free(game->map.line);
+		free(game->map.line); // free buffer
 		game->map.line = get_next_line(game->fd);
 	}
 	game->map.array = ft_split(game->map.str_line, '\n');
