@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 16:27:31 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/28 14:22:05 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/03/01 20:34:10 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,19 @@ typedef struct s_tile
 typedef struct s_map
 {
 	char	*map_file;
-	char	*line;
+	char	*line; // buffer for grabbing line
 	int		rows;
 	int		w;
 	int		h;
 	char	*str;
-	char	*str_line;
-	char	**array;
+	char	*str_line; //first line
+	char	**array; //2d array
 	char	**array_cpy;
 }		t_map;
 
-typedef struct s_game
+typedef struct s_game  //memory address so will need to be malloced
 {
-	void	*mlx;
+	void	*mlx; // pointer to library
 	void	*win;
 	void	*fl;
 	void	*ex;
