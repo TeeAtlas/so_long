@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 23:35:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/28 13:55:40 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/03/09 18:03:57 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 int	is_valid_map(char ch)
 {
 	if (ch == '1' || ch == '0' || ch == 'C' || ch == 'E' || ch == 'P')
-		return (1);
-	if (ch == '\n')
 		return (1);
 	return (0);
 }
@@ -58,11 +56,10 @@ int	maplinelen(char *mapline)
 	printf("Mapline 55: %s\n", mapline);
 	while (mapline[i] != '\0')
 	{
-		ft_printf("is_valid_map (%c): %d\n", mapline[i], is_valid_map(mapline[i]));
-		if (is_valid_map(mapline[i]) == 1)
+		if (is_valid_map(mapline[i]) == 1) //giving it a data char point to check characters
 			ct += 1;
-		// else if (mapline[i] == '\n')
-		// 	ct += 0;
+		else if (mapline[i] == '\n')
+			ct += 0;
 		else
 			return (-1);
 		i++;
@@ -95,20 +92,19 @@ int	valid_dimensions(char *mapfile)
 	while (current != NULL)
 	{
 		free(current);
-		current = get_next_line(fd);
+		current = get_next_line(fd); // mow getting next line as being current
 		printf("While Loop Current: %s\n", current);
 
-		if (current == NULL)
+		if (current == NULL) //here we break form loop
 			break ;
 		ft_printf("still in the game\n");
 		currlen = maplinelen(current);
 		if (currlen == -1)
-			return (free_num(current, 10));
+			return (free_num(current, 10)); // not valid dimentions --- code 10 if not valid
 		if (currlen != length)
-			return (free_num(current, 0));
+			return (free_num(current, 10)); // no rectanular --- returning another error code if not valid map maybe shoud be 10
 	}
 	close(fd);
-	ft_printf("returning valid dims: valid\n");
 	return (1);
 }
 
@@ -126,14 +122,11 @@ int	filecheck(t_game *game)
 	valid_ret = valid_dimensions(game->map.map_file);
 	if (valid_ret == 0)
 	{
-		printf("In filecheck: first else if\n");
-
 		ft_printf("Error: Map not rectangular.\n");
 		return (0);
 	}
-	else if (valid_ret == 0)
+	else if (valid_ret == 10)
 	{
-		printf("In filecheck: second else if\n");
 
 		ft_printf("Error: Invalid map character\n");
 		return (0);
