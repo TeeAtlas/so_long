@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 16:27:31 by taboterm          #+#    #+#             */
-/*   Updated: 2023/03/01 20:34:10 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/03/11 20:48:37 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,9 @@
 # define KEY_S		1
 # define KEY_D		2
 
-typedef struct s_tile
-{
-	int		tile_dimension;
-}		t_tile;
+// typedef struct s_tile
+// {
+// }		t_tile;
 
 typedef struct s_map
 {
@@ -60,6 +59,7 @@ typedef struct s_game  //memory address so will need to be malloced
 	void	*pl;
 	void	*wl;
 	void	*cl;
+	int		tile_dimension;
 	int		wl_ct;
 	int		fl_ct;
 	int		cl_ct; //current number of collectables in map
@@ -75,7 +75,7 @@ typedef struct s_game  //memory address so will need to be malloced
 	int		x;
 	int		y;
 	t_map	map;
-	t_tile	tile;
+	// t_tile	tile;
 }		t_game;
 
 // static void	read_map_line(t_game *game);

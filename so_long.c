@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 18:22:14 by taboterm          #+#    #+#             */
-/*   Updated: 2023/03/11 14:02:23 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/03/11 20:48:28 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ cc -framework OpenGL -framework AppKit the_function.c minilibx_opengl_20191021/l
 void	initialize_game(t_game *game)
 {
 	game->mlx = mlx_init();
-	game->tile.tile_dimension = TILE;
+	game->tile_dimension = TILE;
 	read_map(game);
 	elements_init(game);
 	min_max_elements(game);
