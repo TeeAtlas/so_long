@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 23:35:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/03/11 12:40:18 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/03/11 14:50:05 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,20 +40,22 @@ int	ends_ber(char *str)
 		i++;
 	}
 	if (ft_strncmp(ending, "ber", 4) == 0)
+	{
+		free(ending);
 		return (1);
+	}
+	free(ending);
 	return (0);
 }
 
 //Function counts the valid characters in a map line.
 int	maplinelen(char *mapline)
 {
-	ft_printf("\n\nInput mapline: %s\n", mapline);
 	int	i;
 	int	ct;
 
 	ct = 0;
 	i = 0;
-	printf("Mapline 55: %s\n", mapline);
 	while (mapline[i] != '\0')
 	{
 		if (is_valid_map(mapline[i]) == 1) //giving it a data char point to check characters
@@ -64,7 +66,6 @@ int	maplinelen(char *mapline)
 			return (-1);
 		i++;
 	}
-	ft_printf("Final ct value: %d\n", ct);
 	return (ct);
 }
 

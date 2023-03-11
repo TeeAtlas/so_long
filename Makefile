@@ -6,7 +6,7 @@
 #    By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 12:41:36 by taboterm          #+#    #+#              #
-#    Updated: 2023/02/26 15:15:35 by taboterm         ###   ########.fr        #
+#    Updated: 2023/03/11 13:25:31 by taboterm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJS = $(SRCS:%.c=%.o)
 
 # Compiling info
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -g -fsanitize=address
+CFLAGS = -Wall -Werror -Wextra -g 
 MFLAGS = -L${MLX_DIR} -I$(MLX_PATH) -lmlx -lm -framework OpenGL -framework AppKit
 
 # Target output

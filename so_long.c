@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 18:22:14 by taboterm          #+#    #+#             */
-/*   Updated: 2023/03/01 13:20:58 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/03/11 14:02:23 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,19 @@ int	main(int argc, char **argv)
 	
 	arg_check(argc);
 	game = NULL;
-	game = (t_game *) malloc (sizeof(t_game)); //mallocing for struct
+	game = (t_game *) malloc (sizeof(t_game));
 	game->map.map_file = argv[1];
-	if (filecheck(game) == 0)
+	if (filecheck(game) == 0) 
+	{ 
+		free(game);
 		return (EXIT_FAILURE);
+	}
 	initialize_game(game);
 	if (is_valid_path(game) == 0)
-		return (EXIT_SUCCESS);
+	{ 
+		free(game);
+		return (EXIT_FAILURE);
+	}
 	mlx_hook(game->win, 17, 0, destroy, game);
 	mlx_key_hook(game->win, player_moves, game); 
 	mlx_loop(game->mlx);

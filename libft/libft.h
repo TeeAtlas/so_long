@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 13:46:07 by taboterm          #+#    #+#             */
-/*   Updated: 2023/01/12 11:57:10 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/03/11 14:42:39 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 t_list	*ft_lstnew(void *content);
 
 /* gnl */
-char	*gnl_output(char *str_a);
-char	*gnl_new_line(char *str_a);
-char	*gnl_read_line(int fd, char *str_a);
 char	*get_next_line(int fd);
 
 /* printf */

@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 01:34:16 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/22 17:39:08 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/03/11 15:27:10 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	free_game(t_game *game)
 	free(game->map.line);
 	free(game->map.str_line);
 	free_split(game->map.array);
+	free_split(game->map.array_cpy);
 	free(game);
 }
 
