@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 15:44:23 by taboterm          #+#    #+#             */
-/*   Updated: 2023/03/01 20:19:47 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/03/11 22:16:52 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	find_player(t_game *game)
 {
-	int i;
-	int j;
-	
+	int	i;
+	int	j;
+
 	i = 0;
 	j = 0;
 	while (game->map.array[i])
@@ -42,7 +42,7 @@ void	read_map(t_game *game)
 	game->map.h = 0;
 	game->map.rows = 0;
 	game->fd = open(game->map.map_file, O_RDONLY);
-	game->map.line =  get_next_line(game->fd); //populating line
+	game->map.line = get_next_line(game->fd); //populating line
 	if (!game->map.line)
 		no_file(game);
 	game->map.w = maplinelen(game->map.line);

@@ -6,14 +6,14 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 13:39:07 by taboterm          #+#    #+#             */
-/*   Updated: 2023/03/11 15:26:42 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/03/11 22:04:38 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
 // destroys window 
-int destroy(t_game *game)
+int	destroy(t_game *game)
 {
 	mlx_destroy_window(game->mlx, game->win);
 	free_game(game);
@@ -27,7 +27,7 @@ void	no_file(t_game *game)
 	exit (EXIT_FAILURE);
 }
 
-void	game_over(t_game  *game)
+void	game_over(t_game *game)
 {
 	ft_printf("You're out! You did it in %d moves.\n", game->moves_ct);
 	mlx_destroy_window(game->mlx, game->win);

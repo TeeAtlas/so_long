@@ -6,12 +6,11 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 17:42:23 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/27 20:01:31 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/03/11 22:26:28 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
 
 void	reachables(t_game *game, int x, int y)
 {

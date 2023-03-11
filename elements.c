@@ -6,14 +6,13 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 17:18:38 by taboterm          #+#    #+#             */
-/*   Updated: 2023/03/11 12:38:44 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/03/11 21:54:44 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-// init all pointers to null and all int to 0
-
+/* init all pointers to null and all int to 0 */
 void	elements_init(t_game *game)
 {
 	game->fl_ct = 0;
@@ -25,7 +24,6 @@ void	elements_init(t_game *game)
 	game->reach_ct = 0;
 	game->ell_ct = 0;
 }
-
 
 void	elements_list(t_game *game, int i, int j)
 {
@@ -41,9 +39,9 @@ void	elements_list(t_game *game, int i, int j)
 
 void	min_max_elements(t_game *game)
 {
-	int i;
-	int j;
-	
+	int	i;
+	int	j;
+
 	i = 0;
 	j = 0;
 	while (i < game->map.h - 1)
@@ -51,7 +49,7 @@ void	min_max_elements(t_game *game)
 		j = 0;
 		while (j < game->map.w - 1)
 		{
-			elements_list(game, i , j);
+			elements_list(game, i, j);
 			j++;
 		}
 		i++;

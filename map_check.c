@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 23:35:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/03/11 14:50:05 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/03/11 22:10:22 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	maplinelen(char *mapline)
 	i = 0;
 	while (mapline[i] != '\0')
 	{
-		if (is_valid_map(mapline[i]) == 1) //giving it a data char point to check characters
+		if (is_valid_map(mapline[i]) == 1) /*giving it a data char point to check characters */
 			ct += 1;
 		else if (mapline[i] == '\n')
 			ct += 0;
@@ -81,7 +81,6 @@ int	valid_dimensions(char *mapfile)
 	fd = open(mapfile, O_RDONLY);
 	current = get_next_line(fd);
 	length = maplinelen(current);
-
 	if (length == -1)
 		return (10);
 	while (current != NULL)
@@ -105,7 +104,7 @@ int	valid_dimensions(char *mapfile)
 int	filecheck(t_game *game)
 {	
 	int	valid_ret;
-	
+
 	if (ends_ber(game->map.map_file) == 0)
 	{
 		ft_printf("Error: Filename\n");
@@ -119,7 +118,6 @@ int	filecheck(t_game *game)
 	}
 	else if (valid_ret == 10)
 	{
-
 		ft_printf("Error: Invalid map character\n");
 		return (0);
 	}

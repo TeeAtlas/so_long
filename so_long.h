@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 16:27:31 by taboterm          #+#    #+#             */
-/*   Updated: 2023/03/11 21:08:27 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/03/11 22:25:55 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,6 @@
 # define KEY_A		0
 # define KEY_S		1
 # define KEY_D		2
-
-// typedef struct s_tile
-// {
-// }		t_tile;
 
 typedef struct s_map
 {
