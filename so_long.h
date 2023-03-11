@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 16:27:31 by taboterm          #+#    #+#             */
-/*   Updated: 2023/03/11 20:48:37 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/03/11 21:08:27 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,8 @@ int		is_valid_path(t_game *game);
 // adding images
 void	xpm_to_pixel(t_game *game);
 void	load_image(t_game *game);
+void	load_image_1(t_game *game);
+void	load_image_2(t_game *game);
 
 //function to initialize game
 void	initialize_game(t_game *game);
@@ -103,7 +105,6 @@ void	arg_check(int argc);
 
 //Function checks whether an input file is valid.
 int		filecheck(t_game *game);
-void	image_fail(t_game *game);
 int		valid_dimensions(char *mapfile);
 int		maplinelen(char *mapline);
 int		ends_ber(char *str);
@@ -118,7 +119,7 @@ int		destroy(t_game *game);
 void	no_file(t_game *game);
 void	game_over(t_game  *game);
 
-// void moveing player with keys etc
+// void moving player with keys etc
 int		player_moves(int keycode, t_game *game);
 void	player_up(t_game *game);
 void	player_down(t_game *game);
