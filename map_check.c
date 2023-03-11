@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 23:35:27 by taboterm          #+#    #+#             */
-/*   Updated: 2023/03/09 18:03:57 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/03/11 12:40:18 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,26 +78,17 @@ int	valid_dimensions(char *mapfile)
 	char	*current;
 
 	fd = open(mapfile, O_RDONLY);
-	printf("%s", "REACHED: valid_dimensions Function: Start \n" );
 	current = get_next_line(fd);
-	printf("Current: %s\n", current);
-
 	length = maplinelen(current);
-	printf("length%d\n", length);
 
 	if (length == -1)
 		return (10);
-	printf("%s\n", "Line 87");
-
 	while (current != NULL)
 	{
 		free(current);
 		current = get_next_line(fd); // mow getting next line as being current
-		printf("While Loop Current: %s\n", current);
-
 		if (current == NULL) //here we break form loop
 			break ;
-		ft_printf("still in the game\n");
 		currlen = maplinelen(current);
 		if (currlen == -1)
 			return (free_num(current, 10)); // not valid dimentions --- code 10 if not valid

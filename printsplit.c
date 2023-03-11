@@ -1,32 +1,28 @@
-// #include "so_long.h"
+#include "so_long.h"
 
-// void	printsplit(char **split)
-// {
-// 	t_game *game;
-//     int    i;
-//     int    j;
+void printsplit(t_game *game)
+{
+    int i = 0;
+    int j = 0;
+    
+    while (game->map.array[i])
+    {
+        j = 0;
+        while (game->map.array[i][j])
+        {
+            ft_printf("%c", game->map.array[i][j]);
+            j++;
+        }
+        printf("\n");
+        i++;
+    }
+}
+ 
 
-// 	game = NULL;
-//     i = 0;
-//     j = 0;
-// 	split = game->map.array;
-//     while (split[i])
-//     {
-//         j = 0;
-//         while (split[i][j])
-//         {
-//             ft_printf("%c", split[i][j]);
-//             j++;
-//         }
-//         printf("\n");
-//         i++;
-//     }
-// } 
-
-// int main(void)
-// {
-// 	t_game *game;
+int main(void)
+{
+	t_game *game;
 	
-//  	printsplit(game->map.arra);
-//  	return(0);
-// }
+ 	printsplit(game->map.array[5][10]);
+ 	return(0);
+}

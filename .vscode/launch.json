@@ -9,7 +9,7 @@
 			"request": "launch",
 			"name": "Debug",
 			"program": "/Users/taniaboterman/42_files/git_so_long/so_long",
-			"args": ["Map/map.ber"],
+			"args": ["Maps/map.ber"],
 			"cwd": "/Users/taniaboterman/42_files/git_so_long/"
 		}
 	]

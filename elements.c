@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 17:18:38 by taboterm          #+#    #+#             */
-/*   Updated: 2023/03/01 20:25:37 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/03/11 12:38:44 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ void	walled_sides(t_game *game)
 	int	i;
 	int	j;
 
-	ft_printf("checking sides\n");
 	i = 0;
 	j = 0;
 	while (i < game->map.h - 1)
@@ -78,14 +77,12 @@ void	walled_sides(t_game *game)
 	}
 	i = 0;
 	j = game->map.w - 1;
-	ft_printf("checking right\n");
 	while (i < game->map.h - 1)
 	{
 		if (game->map.array[i][j] != '1')
 			notwalledinexit(game);
 		i++;
 	}
-	ft_printf("sides good\n");
 }
 
 void	walled_topbottom(t_game *game)

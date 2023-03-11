@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:44:32 by taboterm          #+#    #+#             */
-/*   Updated: 2022/06/25 18:14:00 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/03/01 20:21:25 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,19 +87,19 @@ char	**ft_split(char const *s, char c)
 	return (tab);
 }
 
-/*int		main(void)
-{
- 	char	**tab;
- 	unsigned int	i;
- 	int	c;
+// int		main(void)
+// {
+//  	char	**tab;
+//  	unsigned int	i;
+//  	int	c;
 	
- 	c = 0;
- 	tab = ft_split("Tania     says   hi, and hello !   ", 040);
- 	i = 0;
- 	while (i < 7)
- 	{
- 		printf("tab[%d] = %s\n", i, tab[i]);
- 		i++;
- 	}
- 	return(0);
-}*/
+//  	c = 0;
+//  	tab = ft_split("Tania     says   hi, and hello !   ", 040);
+//  	i = 0;
+//  	while (i < 7)
+//  	{
+//  		printf("tab[%d] = %s\n", i, tab[i]);
+//  		i++;
+//  	}
+//  	return(0);
+// }
